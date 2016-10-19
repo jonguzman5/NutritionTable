@@ -30,9 +30,9 @@ In order to submit your homework to this repo and share it with your instruction
 | **Instructional Lead** | John Bell    | @bell  | john.bell@ga.co  |
 | **Instructional Lead** | Bryan Mytko | @bryan         | bryan.mytko@ga.co  |
 | **Instructional Lead** | Tims Gardner | @tims         | tims.gardner@ga.co  |
-| **Instructional Associate** | Heidi Powers      | @heidipowers |  |
+| **Instructional Associate** | Heidi Powers      | @heidipowers | heidi.powers@ga.co |
 | **Instructional Associate** | Jared Murphy      | @jaredmurphy | jared.murphy@ga.co |
-| **Nighttime TA** | Nick Michel      | @pognut |  |
+| **Nighttime TA** | Nick Michel      | @pognut | nick.michel@ga.co |
 
 
 # Important Dates
