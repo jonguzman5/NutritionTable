@@ -1,0 +1,50 @@
+/* A class > a tag */
+<h1 class='classname'>Hi</h1>
+.classname{
+  color:  #FB1;
+}
+h1{
+  color: #c0ff33;
+}
+
+/* An ID > a class */
+<a id='id_name' class='classname'>hi</a>
+#id_name{
+  color: #De1e7e;
+}
+.classname{
+  color: #d3f3c8;
+}
+
+/* inline > all */
+<h1 id='header' style='color: #d3cad3'>blah</h1>
+#header{
+  color:  #Acc355; /* this will not apply! */
+}
+
+/* more classes > less classes */
+.container.classname{
+  color:  #dec0de;
+}
+.classname{
+  color: #AC1d1c;
+}
+
+/* if selectors are equal, last one applies  */
+<a class='mylink button'>Submit</a>
+.mylink{
+  color: #0ff1c3;
+}
+.button{
+  color: #5eab3d;
+}
+
+/* media queries rules being met > all.  */
+.classname{
+  color: #bad;
+}
+@media screen and (min-width: 300px){
+  .classname{
+    color: #0ff;
+  }
+}
