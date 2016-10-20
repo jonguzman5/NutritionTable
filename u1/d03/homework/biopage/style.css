@@ -1,0 +1,81 @@
+body{
+  margin: 0;
+}
+.mainheader {
+  height: 500px;
+  width: 100%;
+  background: url('bannerpano1.jpg');
+  background-size: cover;
+  text-align: center;
+  font-size: 30px;
+  color: #3d2918;
+  font-family: 'Kalam';
+  padding-top:  1px;
+}
+#profilepic {
+  height: 250px;
+  width: 250px;
+  margin: 5px;
+  transform: rotate(180deg);
+  opacity: 0.75;
+}
+.box2 {
+  height: 500px;
+  background: url('webdev2.jpg');
+  background-size: 100% 100%;
+  margin: -22px 0 0 0;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Kalam';
+}
+.box3 {
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  font-family: 'Kalam';
+}
+#leftbox3 {
+  width: 50%;
+  height: 500px;
+  background: url('webdev1.jpg');
+  background-size: cover;
+  float: left;
+  color: #ffffff;
+  font-family: 'Kalam';
+}
+#rightbox3 {
+  width: 50%;
+  height: 500px;
+  background: url('webdev3.jpg');
+  background-size: 100% 100%;
+  float: right;
+  color: #ffffff;
+  font-family: 'Kalam';
+}
+.footer {
+  margin: -20px 0 0 0;
+  height: 150px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: right;
+  display: inline-block;
+  font-family: 'Kalam';
+}
+.portfolio {
+  float: left;
+  padding-left: 20px;
+}
+#twitter {
+float: right;
+margin-top: -12px;
+}
+#linkedin {
+float: right;
+}
+#github {
+  float: left;
+  margin-left: 35px;
+}
+
