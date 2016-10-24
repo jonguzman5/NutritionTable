@@ -21,12 +21,13 @@ var thirdSide = alert("The length of the third side is " + sidethree.toFixed(3))
 var saySomething = prompt("Please enter some words");
 function maxWord(str) {
   var words = str.split(' ');
-  var longestWord = 0;
+  var longestWord = "";
   for (var i = 0; i<words.length; i++){
-    if(words[i].length > longestWord){
-      longestWord = words[i].length;
+    if(words[i].length > longestWord.length){
+      longestWord = words[i];
     }
   }
   return longestWord;
 }
-var giveSomething = alert('The longest word is ' + maxWord.longestWord + ' with '+ maxWord(saySomething) + " characters");
+
+alert('The longest word is ' + maxWord(saySomething) + ' with '+ maxWord(saySomething).length + " characters");
