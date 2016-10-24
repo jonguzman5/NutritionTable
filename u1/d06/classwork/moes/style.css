@@ -1,0 +1,208 @@
+body{margin:0px}
+setting{
+  background-image: url(images/setting.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 925px;
+  width: 1200px;
+  position: absolute;
+} 
+
+homer{
+  background-image: url(images/homer1.png);
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+  position: absolute;
+  bottom: 120px;
+  left: 550px;
+  height: 450px;
+  width: 320px;
+  background-size: contain;
+}
+
+barney.drunk{
+  background-image: url(images/barney1.png);
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+  position: absolute;
+  bottom: 120px;
+  left: 880px;
+  height: 450px;
+  width: 320px;
+  background-size: contain;
+}
+
+homer.drunk{
+  background-image: url(images/homer2.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 270px;
+  left: 280px;
+  height: 450px;
+  width: 320px;
+  background-size: contain;  
+}
+
+sleepinghomer{
+  background-image: url(images/homer3.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 169px;
+  left: 126px;
+  height: 450px;
+  width: 520px;
+  background-size: contain;
+  transform: rotate(-2deg);
+}
+
+duff1{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 120px;
+  left: 280px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff2{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 120px;
+  left: 315px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff3{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 120px;
+  left: 350px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff4{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 120px;
+  left: 385px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff5{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 120px;
+  left: 420px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff6{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 170px;
+  left: 298px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff7{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 170px;
+  left: 333px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff8{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 170px;
+  left: 368px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff9{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 170px;
+  left: 403px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff10{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 220px;
+  left: 318px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff11{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 220px;
+  left: 353px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff12{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 220px;
+  left: 388px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff13{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 270px;
+  left: 335px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff14{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 270px;
+  left: 370px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
+duff15{
+  background-image: url(images/duff.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 320px;
+  left: 350px;
+  height: 70px;
+  width: 70px;
+  background-size: contain;  
+}
