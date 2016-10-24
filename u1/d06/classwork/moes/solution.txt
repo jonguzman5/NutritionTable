@@ -1,0 +1,29 @@
+body = document.querySelector('body')
+
+body.innerHTML = '<setting>'
+
+setting = document.querySelector('setting')
+
+setting.innerHTML = '<characters>'
+
+char = document.querySelector('characters')
+
+char.innerHTML='<homer>'
+
+char.innerHTML+='<barney class="drunk">'
+
+for (i=0;i<16;i++){
+  setting.innerHTML += ("<duff"+i+">")
+}
+
+homer = document.querySelector('homer')
+
+homer.className = 'drunk'
+
+homer.remove()
+
+barney = document.querySelector('barney')
+
+barney.remove()
+
+char.innerHTML = "<sleepinghomer>" 
