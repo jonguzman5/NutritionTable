@@ -35,7 +35,7 @@ console.log(i);
 
  - Can you explain the result with your understanding of scope?
 
-#### 3. Which of the following is an anonymous function?
+#### . Which of the following is an anonymous function?
 ``` Javascript
 function sayHi() {
   console.log("Hi");

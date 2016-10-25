@@ -1,24 +1,28 @@
 /* select the li, then specify darth vader */
 /* his background should be red */
-
-
-
+li#darth-vader {
+  background-color: red;
+}
 /* select all the sith lords */
 /* all but vaders should turn orange */
 
-
-
+.sith-lords {
+  background-color: orange;
+}
 /* select only sidious */
 /* his background should turn yellow */
-
-
-
+#sidious {
+  background-color: yellow;
+}
 /* select the li, then sidious, then his hover psuedo element */
 /* when you hover on him, his color should turn yellow to green. */
-
-
-
+li#sidious:hover {
+  background-color: green;
+}
 /* select all the sithlord classes and their hover psuedo element */
+.sith-lords:hover {
+  background-color: purple;
+}
 /* only darth maul should be affected. */
 
 
