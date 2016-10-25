@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body { height: 200% }
+
+h1 {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.main_container {
+  width: 980px;
+  margin: 20px auto;
+}
+
+.display {
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.control-label {
+  padding: 20px 0;
+  font-size: 22px;
+}
