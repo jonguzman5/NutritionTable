@@ -48,7 +48,7 @@ var div = document.createElement('div');
 div.id = "the-ring";
 div.class = 'magic-imbued-jewelry';
 document.getElementsByClassName('frodo').innerHTML += ('the-ring');
-}
+};
 keepItSecretKeepItSafe();
 //4//
 
