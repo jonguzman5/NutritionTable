@@ -1,0 +1,70 @@
+body{
+  border-color: black;
+  margin: 0;
+  padding: 0;
+  background-color: #002157;
+  zoom: 200%;
+}
+.ralph{
+  top:200px;
+  left:200px;
+  position: absolute;
+  width: 65px;
+  height: 58px;
+  background-image: url('images/ralph.png');
+  background-repeat: no-repeat;
+}
+#ralph1{
+  background-position:-105px -483px;
+}
+#ralph2{
+  background-position:-169px -483px;
+}
+#ralph3{
+  background-position:-233px -483px;
+}
+#ralph4{
+  background-position:-297px -483px;
+}
+#ralph5{
+  background-position:-361px -483px;
+}
+#ralph6{
+  background-position:-425px -483px;
+}
+#ralph7{
+  background-position:-105px -547px;
+}
+#ralph8{
+  background-position:-169px -547px;
+}
+#ralph9{
+  background-position:-233px -547px;
+}
+#ralph10{
+  background-position:-297px -547px;
+}
+#ralph11{
+  background-position:-361px -547px;
+}
+
+#speech1{
+  width:195px;
+  height:25px;
+  top: 175px;
+  left:192px;
+  position: absolute;
+  background-image: url('images/ralph.png');
+  background-repeat: no-repeat; 
+  background-position: -298px -401px;
+}
+#speech2{
+  width:195px;
+  height:25px;
+  top: 175px;
+  left:192px;
+  position: absolute;
+  background-image: url('images/ralph.png');
+  background-repeat: no-repeat; 
+  background-position: -277px -433px;
+}
