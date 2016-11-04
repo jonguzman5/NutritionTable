@@ -13,7 +13,9 @@ jQuery(function() {
 // level_one.play();
 // descent();
 
-
+var score = 0;
+var $points = $('#points');
+var $score =$('#score');
 setInterval(function(){
   $('#leftdot').attr('class','falling')
 })
@@ -24,8 +26,12 @@ $(document).keydown(function(key) {
     console.log($leftdottop)
     if ($leftdottop > 650){
       console.log('good')
+       score+=1;
+      $score.text(score);
     }else{
       console.log('miss')
+      score-=1;
+      $score.text(score);
     }
   }
 });
@@ -41,15 +47,16 @@ $(document).keydown(function(key) {
     console.log($middottop)
     if ($middottop > 650){
       console.log('good')
+      score+=1;
+      $score.text(score);
     }else{
       console.log('miss')
+      score-=1;
+      $score.text(score);
     }
   }
 });
 
-var score = 0;
-var $points = $('#points');
-var $score =$('#score');
 setInterval(function(){
   $('#rightdot').attr('class','falling')
 })

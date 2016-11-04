@@ -4,6 +4,7 @@ body {
 }
 #leftdot{
 position: relative;
+margin: 0 0 0 35px;
 width: 20px;
 height: 20px;
 background: url('dot.png');
@@ -13,6 +14,7 @@ float: left;
 }
 #middot{
 position: relative;
+margin: 0 0 0 -100px;
 width: 20px;
 height: 20px;
 background: url('dot.png');
@@ -21,6 +23,7 @@ display: inline-block;
 }
 #rightdot{
 position: relative;
+margin: 0 35px 0 0;
 width: 20px;
 height: 20px;
 background: url('dot.png');
@@ -43,35 +46,24 @@ animation: meteor 1s infinite,
   100% { background-color: #ffff00; box-shadow: 0 0 10px #e5e500; }
 }
 ul{
-  margin-top: 650px;
   color: white;
   word-spacing: 43px;
   position: absolute;
 }
-#leftay {
-  display: inline-block;
-  width: 33%;
-}
-#mides {
-  display: inline-block;
-  width: 33%;
-}
-#rightde {
-  display: inline-block;
-  width: 33%;
-}
 #ay {
   text-decoration: none;
   list-style-type: none;
+  float: left;
+  margin: 665px 0 0 0;
 }
 #es {
   text-decoration: none;
   list-style-type: none;
-  padding-left: 190px;
+  margin: 641px 0 0 646px;
 }
 #de {
   text-decoration: none;
   list-style-type: none;
-  padding-left: 415px;
+  float: right;
+  margin: 665px -1342px 0 0;
 }
-
