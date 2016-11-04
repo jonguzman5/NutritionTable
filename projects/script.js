@@ -47,6 +47,9 @@ $(document).keydown(function(key) {
   }
 });
 
+var score = 0;
+var $points = $('#points');
+var $score =$('#score');
 setInterval(function(){
   $('#rightdot').attr('class','falling')
 })
@@ -57,12 +60,16 @@ $(document).keydown(function(key) {
     console.log($rightdottop)
     if ($rightdottop > 650){
       console.log('good')
+      score+=1;
+      $score.text(score);
+      // document.appendTo($score)
     }else{
       console.log('miss')
+      score-=1;
+      $score.text(score);
     }
   }
 });
-
 })
 
 //Level one begins- random song selected from "leveloneplaylist" array//
