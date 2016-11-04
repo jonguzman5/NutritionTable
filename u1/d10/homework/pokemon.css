@@ -8,14 +8,11 @@ body{
 	border: 10px solid #CCC;
 	width: 556px;
 	height: 371px;
-	background: url(images/bg.png);
+	background: url('images/bg.png');
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 5%;
 }
-
-
-
 #pikachu{
 	position: absolute;
 	height:110px;

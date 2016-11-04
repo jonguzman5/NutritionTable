@@ -57,5 +57,4 @@ jQuery(function() {
   //     of a way to adjust the ducks speed based on how far needs to move?
 
   // 15. You win 1 trillion tokens.  Play the day away!
-
 })

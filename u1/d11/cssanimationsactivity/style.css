@@ -1,0 +1,146 @@
+body {
+  background:  url('https://media.giphy.com/media/IeCVaFnmXFpjq/giphy.gif');
+  background-size: cover;
+  margin: 500px;
+}
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+#sun{
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 50px yellow;
+  margin-top:  -50px;
+  margin-left: -50px;
+}
+#mercury{
+  width: 20px;
+  height: 20px;
+  margin-top: -75px;
+  margin-left: -75px;
+  background-color: maroon;
+  box-shadow: 0 0 50px maroon;
+  transform-origin: 75px 75px;
+  animation: spinright 3.4s linear infinite;
+}
+@keyframes spinright{
+  100%{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+#venus{
+  width: 30px;
+  height: 30px;
+  margin-top: -110px;
+  margin-left: -110px;
+  background-color: purple;
+  box-shadow: 0 0 50px #9999dd;
+  transform-origin: 110px 110px;
+  animation: spinright 3.8s linear infinite;
+}
+@keyframes spinright{
+  100%{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+#earth{
+  width: 15px;
+  height: 15px;
+  margin-top: -135px;
+  margin-left: -135px;
+  background-color: blue;
+  box-shadow: 0 0 50px powderblue;
+  transform-origin: 135px 135px;
+  animation: spinright 5.8s linear infinite;
+}
+#moon {
+  width: 10px;
+  height: 10px;
+  margin-top: -15px;
+  margin-left: -15px;
+  background-color: white;
+  box-shadow: 0 0 50px dimgray;
+  transform-origin: 15px 15px;
+  animation: spinright 5.8s linear infinite;
+}
+#mars{
+  width: 15px;
+  height: 15px;
+  margin-top: -160px;
+  margin-left: -160px;
+  background-color: red;
+  box-shadow: 0 0 50px darkred;
+  transform-origin: 160px 160px;
+  animation: spinright 2.8s linear infinite;
+}
+#jupiter{
+  width: 30px;
+  height: 30px;
+  margin-top: -185px;
+  margin-left: -185px;
+  background-color: #BDB76B;
+  box-shadow: 0 0 50px  yellow;
+  transform-origin: 185px 185px;
+  animation: spinright 1.8s linear infinite;
+}
+#saturn{
+  width: 30px;
+  height: 30px;
+  margin-top: -210px;
+  margin-left: -210px;
+  background-color: #4c4c00;
+  box-shadow: 0 0 50px  #191900;
+  transform-origin: 210px 210px;
+  animation: spinright 6.8s linear infinite;
+}
+#uranus{
+  width: 20px;
+  height: 20px;
+  margin-top: -235px;
+  margin-left: -235px;
+  background-color: powderblue;
+  box-shadow: 0 0 50px  blue;
+  transform-origin: 235px 235px;
+  animation: spinright 8.8s linear infinite;
+}
+#neptune{
+  width: 20px;
+  height: 20px;
+  margin-top: -260px;
+  margin-left: -260px;
+  background-color: #668B8B;
+  box-shadow: 0 0 50px #5F9F9F;
+  transform-origin: 260px 260px;
+  animation: spinright 5.8s linear infinite;
+}
+#p{
+  width: 15px;
+  height: 15px;
+  margin-top: -170px;
+  margin-left: -170px;
+  background-color: #FFF5C3;
+  box-shadow: 0 0 50px #FFF510;
+  transform-origin: 170px 170px;
+  animation: spinright 6.8s linear infinite;
+}
+@keyframes spinright{
+  100%{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+
+

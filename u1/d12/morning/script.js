@@ -50,11 +50,51 @@ var philosophers = [
     img: "http://www.prospectmagazine.co.uk/wp-content/uploads/2014/03/heidegger-crop.jpg"
   }
 ];
+// var Nietzsche = philosophers[0];
+// var Aristotle = philosophers[1];
+// var Hegel = philosophers[2];
+// var Beauvoir = philosophers[3];
+// var Heidegger = philosophers[4];
 
 $(document).ready(function() {
 
   console.log('script loaded');
-
-  // your code here
-  
+  // function philososee {
+    ///$(function(){
+    // var philosophical = $(input).val() || philosophers[];
+    ///$(input).val(Aristotle);
+  ///}
+  // philososee();
+  $('#inputSubmit').click(function(){
+    var $input = $('input').val();
+    console.log($input);
+    var philosopher;
+    switch($input){
+      case "Nietzsche";
+      philosopher = philosophers[0];
+      break;
+      case "Aristotle";
+      philosopher = philosophers[1];
+      break;
+      case "Hegel";
+      philosopher = philosophers[2];
+      break;
+      case "Beauvoir";
+      philosopher = philosophers[3];
+      break;
+      case "Heidegger";
+      philosopher = philosophers[4];
+      break;
+      default:
+      console.log('incorrect please try again')
+    }
+    $('img').attr('src', philosopher.img);
+    $('.name').text(philosopher.name);
+    $('.school').text(philosopher.school);
+    $('.quote').text(philosopher.famousLine);
+    $('input').val(' ');
+  ////     var inputarea = $('#inputField').val();
+  ////   });
+  //// });
+  });
 });

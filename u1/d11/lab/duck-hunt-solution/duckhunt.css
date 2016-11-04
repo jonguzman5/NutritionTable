@@ -23,7 +23,6 @@ body, html {
   transition-timing-function: linear;
   background-repeat: no-repeat;
 }
-
 .duck.right       { background-position: -200px -160px; }
 .duck.right.flap  { background-position: -300px -160px; }
 .duck             { background-position: -100px -160px; }

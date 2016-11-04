@@ -38,12 +38,25 @@ jQuery(function() {
 
   // 11. BOOM. Attach a "click" handler that adds the "shot" class to
   //     the duck when you click on it!
-
+ duck.click(function() {
+      $(this).addClass('shot');
   // 12. After a duck has been clicked on, remove it from the DOM after
   //     a short delay (1 second)
+   setTimeout(function() {
+      duck.remove();
+      winnerchecker();
+    }, 1000)
+})
+return duck;
+}
 
   // 13. Create a new function named checkForWinner() that reads the DOM
   //     to see if there are any ducks left. If not, alert "YOU WIN!"
+
+function winnerchecker(){
+  if($('.duck').length === 0){
+  alert('YOU WIN!')
+}}
 
   // 14. BONUS: The ducks are moving pretty erratically, can you think
   //     of a way to adjust the ducks speed based on how far needs to move?

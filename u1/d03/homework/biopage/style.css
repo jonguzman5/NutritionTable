@@ -1,6 +1,36 @@
 body{
   margin: 0;
 }
+header {
+  background:  url('woodhbg.jpg');
+  background-size: cover;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+header nav {
+  text-decoration:  none;
+  list-style-type: none;
+  color: white;
+  word-spacing: 100px;
+}
+header nav ul a{
+  text-decoration:  none;
+  list-style-type: none;
+  color: white;
+}
+header nav ul li{
+  display: inline-block;
+  background-color: brown;
+}
+.services :hover {
+  display: block;
+  position: relative;
+}
+.servicessub{
+  display: none;
+  position: absolute;
+}
 .mainheader {
   height: 500px;
   width: 100%;
@@ -9,8 +39,8 @@ body{
   text-align: center;
   font-size: 30px;
   color: #3d2918;
+  padding-top: 25px;
   font-family: 'Kalam';
-  padding-top:  1px;
 }
 #profilepic {
   height: 250px;
