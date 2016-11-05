@@ -23,7 +23,7 @@ display: inline-block;
 }
 #rightdot{
 position: relative;
-margin: 0 35px 0 0;
+margin: -24px 35px 0 0;
 width: 20px;
 height: 20px;
 background: url('dot.png');
@@ -35,7 +35,6 @@ float: right;
 animation: meteor 1s infinite,
                   glow 1500ms infinite;
 }
-
 @keyframes meteor {
     from {top:0px;}
     to {top:680px;}
@@ -65,5 +64,5 @@ ul{
   text-decoration: none;
   list-style-type: none;
   float: right;
-  margin: 665px -1342px 0 0;
+  margin: 640px -1342px 0 0;
 }

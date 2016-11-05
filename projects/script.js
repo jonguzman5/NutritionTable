@@ -16,9 +16,20 @@ jQuery(function() {
 var score = 0;
 var $points = $('#points');
 var $score =$('#score');
+var dots = ['#leftdot','#middot','#rightdot']
+
+
+
 setInterval(function(){
-  $('#leftdot').attr('class','falling')
-})
+  $('.falling').each(function(){
+    $(this).attr('class','')
+  })
+  var random_dot = dots[Math.floor(Math.random()*dots.length)];
+  $(random_dot).attr('class','falling')
+},1000)
+
+
+
 $(document).keydown(function(key) {
   if (key.which == 65){
     $leftdottop = Math.floor($('#leftdot').css('top').replace('px',''))
@@ -34,13 +45,8 @@ $(document).keydown(function(key) {
       $score.text(score);
     }
   }
-});
 
 
-setInterval(function(){
-  $('#middot').attr('class','falling')
-})
-$(document).keydown(function(key) {
   if (key.which == 83){
     var $middottop = Math.floor($('#middot').css('top').replace('px',''))
     console.log('you pressed s.')
@@ -55,12 +61,7 @@ $(document).keydown(function(key) {
       $score.text(score);
     }
   }
-});
 
-setInterval(function(){
-  $('#rightdot').attr('class','falling')
-})
-$(document).keydown(function(key) {
   if (key.which == 68){
     var $rightdottop = Math.floor($('#rightdot').css('top').replace('px',''))
     console.log('you pressed d.')
@@ -69,7 +70,6 @@ $(document).keydown(function(key) {
       console.log('good')
       score+=1;
       $score.text(score);
-      // document.appendTo($score)
     }else{
       console.log('miss')
       score-=1;
@@ -77,7 +77,7 @@ $(document).keydown(function(key) {
     }
   }
 });
-})
+});
 
 //Level one begins- random song selected from "leveloneplaylist" array//
 ///var $playmid = function(){
