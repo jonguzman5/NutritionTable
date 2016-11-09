@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="swapi.js"></script>
+    <title>Star Wars 3: The Search For Wedge</title>
+    <style>
+      body {
+        background: url(http://il5.picdn.net/shutterstock/videos/758227/thumb/1.jpg) 0 0;
+      }
+
+      #titles p {
+        font-family: "Droid Sans", arial, verdana, sans-serif;
+        font-weight: 700;
+        color: #ff6;
+        width: 1000px;
+      }
+
+      /* https://www.sitepoint.com/css3-starwars-scrolling-text/ */
+      #titles
+      {
+        position: absolute;
+        width: 18em;
+        height: 50em;
+        bottom: 0;
+        left: 50%;
+        margin-left: -9em;
+        font-size: 350%;
+        font-weight: bold;
+        text-align: justify;
+        overflow: hidden;
+        transform-origin: 50% 100%;
+        transform: perspective(300px) rotateX(25deg);
+      }
+
+      #titles:after
+      {
+        position: absolute;
+        content: ' ';
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 60%;
+        background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+        pointer-events: none;
+      }
+
+      #titlecontent
+      {
+        position: absolute;
+        top: 100%;
+        animation: scroll 100s linear 0s infinite;
+      }
+
+      @keyframes scroll {
+        0% { top: 100%; }
+        100% { top: -170%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="titles">
+      <div id="titlecontent">
+        <p></p>
+      </div></div>
+  </body>
+</html>
