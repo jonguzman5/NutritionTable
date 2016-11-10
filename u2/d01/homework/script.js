@@ -29,29 +29,29 @@ var frameworks = {
   ] // ends backendArray
 } // ends data json object
 
-// var modifiedFrontEnd = frameworks.frontEnd.map(function(addjs){
-//   return addjs.name + ".js";
-// });
-// console.log(modifiedFrontEnd);
+var modifiedFrontEnd = frameworks.frontEnd.map(function(addjs){
+  return addjs.name + ".js";
+});
+console.log(modifiedFrontEnd);
 
-// var filteredFrontEnd = frameworks.frontEnd.filter(function(front){
-//  return front.description.length > 30;
-// });
-// console.log(filteredFrontEnd);
+var filteredFrontEnd = frameworks.frontEnd.filter(function(front){
+ return front.description.length > 30;
+});
+console.log(filteredFrontEnd);
 
-// var filteredBackEnd = frameworks.backEnd.filter(function(vowel){
-// return vowel.name.charAt(0) === 'A' ||
-//            vowel.name.charAt(0) === 'E' ||
-//            vowel.name.charAt(0) === 'I' ||
-//            vowel.name.charAt(0) === 'O' ||
-//            vowel.name.charAt(0) === 'U'
-// });
-// console.log(filteredBackEnd);
+var filteredBackEnd = frameworks.backEnd.filter(function(vowel){
+return vowel.name.charAt(0) === 'A' ||
+           vowel.name.charAt(0) === 'E' ||
+           vowel.name.charAt(0) === 'I' ||
+           vowel.name.charAt(0) === 'O' ||
+           vowel.name.charAt(0) === 'U'
+});
+console.log(filteredBackEnd);
 
-// var frontEndNames = frameworks.frontEnd.reduce(function(bla, blabla) {
-//   return bla += blabla.name;
-// }, "");
-// console.log(frontEndNames);
+var frontEndNames = frameworks.frontEnd.reduce(function(bla, blabla) {
+  return bla += blabla.name;
+}, "");
+console.log(frontEndNames);
 
 var frontNames = frameworks.frontEnd.map(function(addjs){
   return addjs.name + ".js";
@@ -65,10 +65,19 @@ var backNames = frameworks.backEnd.map(function(addjs){
 
 var concatenatedFront = frontNames.reduce(function(nombre, combiner, equalizer, normalizer) {
     if(equalizer === normalizer.length-1)
-       return nombre += combiner + " are back end frameworks"
+       return nombre += combiner + " are the front end frameworks"
   return nombre += combiner + ",";
 }, "");
 console.log(concatenatedFront);
+concatenatedFront.split(' ');
+
+var concatenatedBack = backNames.reduce(function(nombre, combiner, equalizer, normalizer) {
+    if(equalizer === normalizer.length-1)
+       return nombre += combiner + " are the back end frameworks"
+  return nombre += combiner + ",";
+}, "");
+console.log(concatenatedBack);
+concatenatedBack.split(' ');
 
 
 
