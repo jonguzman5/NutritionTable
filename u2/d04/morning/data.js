@@ -119,8 +119,8 @@ var pKeyValue = function(obj){
 ////////////////////////////////////////////////
 
 // assign students areray
-//var students = scully;
-//var students = mulder;
+// var students = scully;
+var students = mulder;
 
 // shuffle students array
 var shuffledStudents = students.shuffle();
