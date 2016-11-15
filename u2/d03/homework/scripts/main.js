@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   var getData = function(cityName){
     return $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=33d32a43c66c0bd96e09774d803c0a78&units=imperial",
+      url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=&units=imperial",
       method: "get" //DON'T UPLOAD API KEY! ^
     }).success(function(weatherData){
         console.log(weatherData);
