@@ -1,0 +1,46 @@
+body{
+  background: url('../img/rainbow-bg.jpg');
+  background-size: cover;
+}
+#all{
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+}
+header {
+  text-align: center;
+  color: white;
+  font-family: verdana;
+  font-size: 24px;
+  background-color: black;
+  padding: 50px;
+}
+nav {
+  word-spacing: 20px;
+  text-align: center;
+}
+nav ul{
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
+}
+#dogpic{
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  float: left;
+}
+/* #dogcontent{
+} */
+.button{
+  background-color: lightblue;
+  color: white;
+}
+#doglogo{
+  width: 40px;
+  height: 40px;
+  align-content: center;
+}
+footer{
+  padding-bottom: 20px;
+}

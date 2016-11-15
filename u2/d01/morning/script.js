@@ -55,6 +55,59 @@ var data =  {
 
   // your work here
 
+// var $name0 = data.people.name;
+// jQuery.parseJSON($name0);
 
+var logData = function() {
+  console.log(data);
+}
+// logData();
+
+var logNames = function() {
+data.people.forEach(function(person){
+  console.log(person.name);
+});
+};
+// logNames();
+
+var logNameEyes = function() {
+data.people.forEach(function(person){
+  console.log(person.name + ' ' + person.eye_color);
+});
+};
+// logNameEyes();
+
+var logByMass = function() {
+data.people.map(function(person){
+  if (person.mass > 75){
+  console.log(person.name)
+}
+});
+};
+// logByMass();
+
+//V2
+// var heavies = data.people.filter(function(person){
+//   if (person.mass > 75){
+//   return person
+// }});
+// console.log(heavies)
+
+var appendCharacterNames = function() {
+  data.people.map(function(person) {
+   $('#characters').append('<p>'+ person.name + '</p>')
+  })
+};
+appendCharacterNames();
+
+var appendByMass = function() {
+  data.people.map(function(person){
+    if(person.mass > 75){
+        $('#characters').append('<p>'+ person.name+'</p>')
+    }
+  $('#title').text('Mass > 75');
+  })
+};
+appendByMass();
 
 }); // ends document ready
