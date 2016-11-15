@@ -2,9 +2,7 @@
 
 ## Imperative and Functional Programming Styles
 
-This section provides a short conceptual overview of the distinction between the imperative programming style, which object-oriented programming is usually considered a kind of, and the functional programming style, which is a kind of _declarative_ programming. It isn't essential for any of the practical skills we're covering, and is therefore optional; a discussion of the practical skills comes further in this document, please feel free to skip there. Nevertheless, it's helpful to have a sense of some of the deeper concepts and broader conversation. I find I learn faster if there's some conceptual or philosophical framework to situate things in; the following essay is an attempt to provide one.
-
-Normally a distinction is drawn between imperative and declarative programming styles. For the sake of brevity I'm going to draw the main distinction between imperative and functional (a kind of declarative) programming here, but it's worth quickly noting that there are many declarative or non-imperative styles of programming besides functional.
+A distinction is often drawn between __imperative__ and __declarative__ styles of programming. This distinction is often explained as the difference between saying _how_ to do something (imperative), and _what_ it is that one wants done (declarative). In many cases the line between "what" and "how" is both fuzzy and prone to shift as computers become more complex and powerful. Object-oriented programming is usually considered an example of imperative programming, functional programming is usually considered an example of declarative programming. On a practical level, the most important difference between the two styles is their varying approach to _change_.
 
 The __imperative__ style of programming considers computation as a series of changes to particular things or locations in memory, including variables, objects, and arrays. From this perspective a program is best considered as a series of instructions that the machine systematically works its way through, repeatedly modifying values at particular places in memory. If I put an object in two places in memory (two arrays, for instance), changes to the object in one place will be reflected immediately in the other:
 
@@ -54,15 +52,17 @@ console.log(stringA === stringB);
 // => false
 ```
 
-The __functional__ style of programming focuses on this more abstract or mathematical kind of entity, and tends to avoid non-local change or mutation as much as possible; that is, changes to things that might be visible in other parts of the program. Where imperative programming considers computation as a series of mutations, functional programming instead emphasizes _deriving_ new data from old, without changing the old. We can derive the circumference of a circle from its radius without changing the radius. We can derive the number of Labrador Retrievers in a neighborhood from a dataset of all neighborhood pets without changing that dataset. Functional programming is based on the observation that most, if not all, tasks in a program can be accomplished by this sort of non-destructive derivation.
+The __functional__ style of programming focuses on this more abstract or mathematical kind of entity, and tends to avoid observable mutation as much as possible; that is, changes to things that might be visible in other parts of the program. Where imperative programming considers computation as a series of mutations, functional programming instead emphasizes _deriving_ new data from old, without changing the old. We can derive the circumference of a circle from its radius without changing the radius. We can derive the number of Labrador Retrievers in a neighborhood from a dataset of all neighborhood pets without changing that dataset. Functional programming is based on the observation that most, if not all, tasks in a program can be accomplished by this sort of non-destructive derivation.
 
-These derivations or transformations are naturally expressed as functions. Imperative programming tends to employ functions primarily as [subroutines](https://en.wikipedia.org/wiki/Subroutine): chunks of code that can be conveniently jumped to in a program, thereby reducing repetition. Functional programming also implements functions as subroutines, but with much more emphasis on the return value, and strives to avoid mutating things outside the function's scope. A _mathematical_ function always gives the same output for the same input, and does nothing else. In math, if we define f(x) := x + 1, f(3) will always equal 4. A _programmatic_ function with this property of always giving the same result for the same input, and doing nothing else, is called a [pure function](https://en.wikipedia.org/wiki/Pure_function). For example, if we define `var f = function(x){return x + 1;}`, `f(3)` will always equal `4`, so `f` here is a pure function. Programs that consist of expressions built from pure functions are called 'purely functional', and in fact are themselves pure functions: such a program will yield the same result every time it is executed with the same input. Pure functions are desirable because their effect is entirely localized and predictable on the basis of their inputs.
+These derivations or transformations are naturally expressed as functions. Imperative programming tends to employ functions primarily as [subroutines](https://en.wikipedia.org/wiki/Subroutine): chunks of code that can be conveniently jumped to in a program, thereby reducing repetition. Functional programming also implements functions as subroutines, but with much more emphasis on the return value, and strives to avoid mutating things that are accessible outside the function's scope. Ideally, the effect of a function in a program should be describable purely in terms of its arguments and return value.
 
-Functional programming is considered a form of __declarative__, as opposed to imperative, programming. Classically this distinction is explained as an emphasis on "what" a program should do, rather than on "how" it should do it. In many cases the line between "what" and "how" is fuzzy, but the general idea is that a program is more clear and easier to debug if it is composed of well-named combinations of functions, rather than complex knots of mutation that have to be carefully walked through to make any sense. This assumption also underlies query systems for databases, which we will touch on soon.
+A _mathematical_ function always gives the same output for the same input, and does nothing else. In math, if we define f(x) := x + 1, f(3) will always equal 4. A _programmatic_ function with this property of always giving the same result for the same input, and doing nothing else, is called a [pure function](https://en.wikipedia.org/wiki/Pure_function). For example, if we define `var f = function(x){return x + 1;}`, `f(3)` will always equal `4`, so `f` here is a pure function. Programs that consist of expressions built from pure functions are called 'purely functional', and in fact are themselves pure functions: such a program will yield the same result every time it is executed with the same input. Pure functions are desirable because their effect is entirely localized and predictable on the basis of their arguments.
 
-Object-oriented styles of programming have some declarative features, but tend to rely heavily on mutation, and are therefore generally considered imperative. The idea in object-oriented programming is to leverage encapsulation and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29#Subtyping) in the form of inheritance to mitigate the confusing aspects of imperative code, while preserving its performance benefits and intuitive appeal.
+Functional programming is considered a form of __declarative__, as opposed to imperative, programming. Rather than specifying all the physical changes in memory the machine must go through to arrive at some result, the programmer just describes the desired result in terms of well-named combinations of functions (so, _what_ rather than _how_). Advocates of functional programming hold that such a program is more clear, and easier to debug, and easier to make important assumptions about, than the complex knots of mutation characterizing imperative code.
 
-Javascript arrays are mutable, and therefore don't support equality comparisons by contents, or the guarantees provided by immutable collections. However, many benefits of the functional approach can still be recovered by simply not mutating arrays. The array methods covered here introduce some nice ways to use arrays and first-class functions without mutating them.
+Object-oriented styles of programming have some declarative features, but tend to rely heavily on mutation, and are therefore considered imperative. The idea in object-oriented programming is to leverage encapsulation and [polymorphism](https://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29#Subtyping) in the form of inheritance to mitigate the confusing aspects of imperative code, while preserving its performance benefits and intuitive appeal.
+
+Javascript arrays are mutable, and therefore don't support equality comparisons by contents, or the guarantees provided by immutable collections. However, many benefits of the functional approach can still be recovered by simply not mutating arrays. The array methods covered here introduce some nice ways to use arrays and first-class functions without observable mutation.
 
 ## Preliminaries
 
@@ -105,23 +105,6 @@ still prints:
 ```
 
 In other words, `[1, 2, 3].map(plusOne)` takes us from `[1, 2, 3]` to `[plusOne(1), plusOne(2), plusOne(3)]`.
-
-`map` is implemented as a method of arrays, but we could write our own version as follows:
-
-```javascript
-// ourMap takes a function f and an array arr as its parameters
-var ourMap = function(f, arr){
-  var resultArray = []; // initialize a new array, to be returned at the end of this function
-  for(var i = 0; i < arr.length; i++){ // loop over all elements of arr
-    var arrElement = arr[i]; // get the element at index i of arr
-    var processedElement = f(arrElement); // call f on it to get some result
-    resultArray.push(processedElement); // push the result to the end of the new array
-  }
-  return resultArray; // return the new array
-};
-```
-
-This implementation does mutate the array `resultArray`, but since `resultArray` is created and mutated within the body of `ourMap`, we have encapsulated that mutation locally. We aren't changing data some other part of the program has a reference to, because no other part of the program can have a reference to `resultArray` before we create it. We can therefore consider `ourMap` a pure function, although, strictly speaking, if `f` changes something elsewhere in the program, calls to `ourMap(f, arr)` would change that thing as well.
 
 `map` is useful for implementing tasks that derive or extract some data from every element of another set of data. For example, let's say we have an array representing some properties of various [biomes](https://en.wikipedia.org/wiki/Biome):
 
@@ -209,11 +192,36 @@ This is the same as:
   plusOne(plusOne(plusOne(3))) ]
 ```
 
+`map` is implemented as a method of arrays, but we could write our own version as follows:
+
+```javascript
+// ourMap takes a function f and an array arr as its parameters
+// ourMap(plusOne, [1, 2, 3]) is the same as [1, 2, 3].map(plusOne)
+var ourMap = function(f, arr){
+  var resultArray = []; // initialize a new array, to be returned at the end of this function
+  for(var i = 0; i < arr.length; i++){ // loop over all elements of arr
+    var arrElement = arr[i]; // get the element at index i of arr
+    var processedElement = f(arrElement); // call f on it to get some result
+    resultArray.push(processedElement); // push the result to the end of the new array
+  }
+  return resultArray; // return the new array
+};
+```
+
+so:
+```javascript
+ourMap(plusOne, [1, 2, 3]);
+// result:
+// [2, 3, 4]
+```
+
+This implementation does mutate the array `resultArray`, but since `resultArray` is created and mutated within the body of `ourMap`, we have encapsulated that mutation locally. We aren't changing data some other part of the program has a reference to, because no other part of the program can have a reference to `resultArray` before we create it. We can therefore consider `ourMap` a pure function, although, strictly speaking, if `f` changes something elsewhere in the program, calls to `ourMap(f, arr)` would change that thing as well.
+
 ## filter
 
 `filter` selects elements from the invoking array that meet some condition. Like `map`, filter returns a new array.
 
-We express this condition as a function that is successively applied to every element of the invoking array. For an array `arr` and condition function `f`, `arr.filter(f)` evaluates to just those elements `x` for which `f(x)` returns a truthy value (to avoid confusion, it's best to use condition functions that return either `true` or `false`. Such functions are sometimes called ['predicates'](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic))).
+We express this condition as a function that is successively applied to every element of the invoking array. For an array `arr` and condition function `f`, `arr.filter(f)` evaluates to a new array containing just those elements `x` of `arr` for which `f(x)` returns a [truthy](https://www.sitepoint.com/javascript-truthy-falsy/) value. To avoid confusion, it's best to use condition functions that return either `true` or `false`. Such functions are sometimes called ['predicates'](https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)).
 
 Let's say we have a function that returns true if its argument is odd, and even otherwise:
 
@@ -252,18 +260,15 @@ evaluates to:
   { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
 ```
 
-If we want to select those biomes with hot temperature and high humidity, we can do so by writing it into the logic of the filtering function:
+If we want to select those biomes with both high humidity and hot temperature , we can do so by changing the condition function:
 
 ```javascript
 biomes.filter(function(biome){
   return biome.humidity === "high" && biome.temperature === "hot";
 });
-```
 
-evaluates to:
-
-```javascript
-[ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
+// result:
+// [ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
 ```
 
 We can make exactly the same selection by chaining simpler filters:
@@ -272,12 +277,9 @@ We can make exactly the same selection by chaining simpler filters:
 biomes
   .filter(function(biome){return biome.humidity === "high";})
   .filter(function(biome){return biome.temperature === "hot";})
-```
 
-also evaluates to:
-
-```javascript
-[ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
+// same result:
+// [ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
 ```
 
 `filter` chains can be reordered without changing their result. If we rearrange the filter calls of the previous example, like so:
@@ -286,15 +288,13 @@ also evaluates to:
 biomes
   .filter(function(biome){return biome.temperature === "hot";})
   .filter(function(biome){return biome.humidity === "high";})
+
+// we still get:
+// [ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
+
 ```
 
-we still get:
-
-```javascript
-[ { name: 'jungle', temperature: 'hot', humidity: 'high' } ]
-```
-
-`map` operations, by contrast, frequently _cannot_ be reordered to obtain an equivalent result; in fact, for any array `arr` and functions `f` and `g`, `f.map(f).map(g)` will only return an equivalent result to `f.map(g).map(f)` if, for any element `x` in `arr`, `g(f(x))` returns an equivalent result to `f(g(x))`.
+`map` operations, by contrast, frequently _cannot_ be reordered to obtain an equivalent result; in fact, for any array `arr` and functions `f` and `g`, `arr.map(f).map(g)` will only return an equivalent result to `arr.map(g).map(f)` if, for any element `x` in `arr`, `g(f(x))` returns an equivalent result to `f(g(x))`.
 
 `map` and `filter` work well together. Often we start with some data, and want to get some more data that is the result of both transforming and selecting from the original data.
 
@@ -304,15 +304,12 @@ Say we want the names of all high-humidity biomes:
 biomes
   .filter(function(biome){return biome.humidity === "high";}) // select high-humidity biomes
   .map(function(biome){return biome.name;}) // get their names
-```
 
-evaluates to:
-
-```javascript
-[ 'swamp', 'jungle' ]
-```
-
+// result:
+// [ 'swamp', 'jungle' ]
+```  
 Compare this to the for-loop equivalent:
+
 ```javascript
 var result = [];
 for(var i = 0; i < biomes.length; i++){
@@ -324,19 +321,18 @@ for(var i = 0; i < biomes.length; i++){
 }
 ```
 
-Notice that we cannot in general reorder these chained calls. If we switch the `map` and the `filter` calls in the previous example, like so:
+Notice that we cannot in general reorder these chained calls. For example, if we switch the `map` and the `filter` calls in the previous example, we get a completely different result:
 
 ```javascript
 biomes
   .map(function(biome){return biome.name;}) // each step returns a string
   .filter(function(biome){return biome.humidity === "high";}) // each step expects a biome object
+
+// now the result is just:
+// []
 ```
 
-we instead get:
-
-```javascript
-[]
-```
+As an exercise, try writing your own implementation of `filter`, as we wrote our own implementation of `map` above.
 
 # reduce
 
@@ -368,7 +364,7 @@ for(var i = 0; i < arr.length; i++){
 console.log(greatest);
 ```
 
-Here we start with `greatest` set to a value guaranteed to be less than every other possible value, then move over every element in the array `arr`, setting `greatest` to that element if it is greater than the current value of `greatest`. When we're done looping over every element, `largest` will be set to the largest of these values. The end effect is different from the example of summing the elements of an array, but the basic pattern of iterating over an array and building up a value is the same.
+Here we start with `greatest` set to a value guaranteed to be less than every other possible value, then move over every element in the array `arr`, setting `greatest` to that element if it is greater than the current value of `greatest`. When we're done looping over every element, `greatest` will be set to the greatest of these values.
 
 As a final example, consider the implementation of `map` we made above:
 
@@ -385,11 +381,11 @@ var ourMap = function(f, arr){
 };
 ```
 
-In this case, `resultArray` is some value we build up (using `push` rather than variable reassignment) while iterating over all the elements of `arr`.
+In this case, `resultArray` is a value we build up (using `push` rather than variable reassignment) while iterating over all the elements of `arr`.
 
 `reduce` is an array method that captures this basic pattern of moving over every element in an array and building up some value. It is the most complicated of the methods we'll look at, but also the most powerful – in fact, `map` and `filter` can both be implemented using `reduce` rather than `for` loops.
 
-The `reduce` method takes two arguments: a "reducing" function and an initial value. The reducing function corresponds to the logic in the body of the loop we'd write if we weren't using `reduce`, and the initial value is whatever we start with before we move across the array.
+The `reduce` method takes two arguments: a "reducing" function and an initial value. The reducing function represents the logic we'll run at every step as we move across the array, and the initial value represents the beginning of the result we'll build up at every step.
 
 Let's rewrite the example above of summing the elements of an array using `reduce` rather than a `for` loop:
 
@@ -454,7 +450,7 @@ return value = 36
 ```
 We start the reduction with `sum` set to `0`, because that's what we passed in as the initial value. The first step of the reduction sets `el` to 3, because 3 is the first element of the array `arr`. `0 + 3` gives us `3`, so that's the return value for the first step.
 
-By the definition of `reduce`, the return value for the first step will be the value of `sum` in the second step (in this case, 3). The value of `el` in the second step will be set to 16, because 16 is the second element of `arr`. `3 + 16` gives us `19`, so that's the return value of the second step.
+The return value for the first step will be the value of `sum` in the second step (in this case, 3). The value of `el` in the second step will be set to 16, because 16 is the second element of `arr`. `3 + 16` gives us `19`, so that's the return value of the second step.
 
 The return value of the second step (`19`) will be the value of `sum` in the third step, just as the return value of the first step was the value of `sum` in the second step. The value of `el` in the third step will be set to 8, because 8 is the third element of `arr`. `19 + 8` gives us `27`, so that's the return value of the third step.
 
@@ -466,36 +462,34 @@ Another way to look at this is as a series of nested invocations of our reducing
 
 var arr = [3, 16, 8, 9];
 
-console.log(
-  ((((0 + arr[0]) + arr[1]) + arr[2]) + arr[3])
-)
-// prints: 36
+((((0 + arr[0]) + arr[1]) + arr[2]) + arr[3])
+// result: 36
 
 // or, equivalently:
 var f = function(sum, el){
   return sum + el;  
 };
-console.log(
+f(
   f(
     f(
-      f(
-        f(0,
-          arr[0]),
-        arr[1]),
-      arr[2]),
-    arr[3])
-);
-// prints: 36
+      f(0,
+        arr[0]),
+      arr[1]),
+    arr[2]),
+  arr[3]);
+// result: 36
 
 // or, equivalently:
 arr.reduce(f, 0);
-// prints: 36
+// result: 36
 
 ```
 
 Like `map` and `filter`, `reduce` is implemented in Javascript as a method of `Array`s. We can easily implement it ourselves, however. Notice how the implementation below implementation resembles the programs for summing the elements of an array, and finding the greatest element.
 
 ```javascript
+
+// ourReduce(f, x, arr) is the same as arr.reduce(f, x)
 var ourReduce = function(reducingFunction, initialValue, arr){
   var accumulating = initialValue;
   for (var i = 0; i < arr.length; i++) {
