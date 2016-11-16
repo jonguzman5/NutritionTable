@@ -2,8 +2,8 @@ $(document).ready(function(){
 
   var getData = function(cityName){
     return $.ajax({
-      url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=&units=imperial",
-      method: "get" //DON'T UPLOAD API KEY! ^
+      url: "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=" + apikey + "&units=imperial",
+      method: "get"
     }).success(function(weatherData){
         console.log(weatherData);
         weatherContent(weatherData);
@@ -12,14 +12,13 @@ $(document).ready(function(){
   var addEventListener = function(){
     $('#submit_button').click(function() {
       var weatherInput = $('#city_entered').val()
-      getData(); // <-- PLACE PARAMETER!
+      getData(weatherInput);
     });
   };
   addEventListener();
 
-  var appendWeather = function(thing1, thing2){
-    $('#forecast').append(thing1);
-    $('.date').text(thing2);
+  var appendWeather = function(city, temp){
+    $('#forecast').text('It\'s' + temp + 'degrees farenheit in ' + city + 'today' );
   };
 
   var weatherContent = function(data){
