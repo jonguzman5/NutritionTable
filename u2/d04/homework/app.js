@@ -14,9 +14,14 @@ var getCSS = function(res){
   res.end(css);
 };
 
-var server = http.createServer(function(req, res){
+var serverres1 = http.createServer(function(req, res){
   if(req.url === "/index.html"){
     getHTML(res);
+  }
+});
+var serverres2 = http.createServer(function(req, res){
+  if(req.url === "/style.css"){
+    getCSS(res);
   }
 });
 
