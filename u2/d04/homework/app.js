@@ -14,19 +14,14 @@ var getCSS = function(res){
   res.end(css);
 };
 
-var serverres1 = http.createServer(function(req, res){
-  if(req.url === "/index.html"){
+var server = http.createServer(function(req, res){
+  if(req.url === "/style.css"){
+    getCSS(res);
+  }else if (req.url === "/"){
     getHTML(res);
   }
 });
-var serverres2 = http.createServer(function(req, res){
-  if(req.url === "/style.css"){
-    getCSS(res);
-  }
-});
 
-serverres1.listen(port);
-console.log("listening on port " + port);
-serverres2.listen(port);
+server.listen(port);
 console.log("listening on port " + port);
 
