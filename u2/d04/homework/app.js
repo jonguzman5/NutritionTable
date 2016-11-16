@@ -25,3 +25,8 @@ var serverres2 = http.createServer(function(req, res){
   }
 });
 
+serverres1.listen(port);
+console.log("listening on port " + port);
+serverres2.listen(port);
+console.log("listening on port " + port);
+
