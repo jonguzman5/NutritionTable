@@ -1,5 +1,7 @@
 # Basic Array Methods and Functional Programming
 
+This document provides a preliminary introduction to functional programming, and three important functional array methods: `map`, `filter`, and `reduce`.
+
 ## Imperative and Functional Programming Styles
 
 A distinction is often drawn between __imperative__ and __declarative__ styles of programming. This distinction is often explained as the difference between saying _how_ to do something (imperative), and _what_ it is that one wants done (declarative). In many cases the line between "what" and "how" is both fuzzy and prone to shift as computers become more complex and powerful. Object-oriented programming is usually considered an example of imperative programming, functional programming is usually considered an example of declarative programming. On a practical level, the most important difference between the two styles is their varying approach to _change_.
@@ -201,7 +203,7 @@ var ourMap = function(f, arr){
   var resultArray = []; // initialize a new array, to be returned at the end of this function
   for(var i = 0; i < arr.length; i++){ // loop over all elements of arr
     var arrElement = arr[i]; // get the element at index i of arr
-    var processedElement = f(arrElement); // call f on it to get some result
+    var processedElement = f(arrElement); // **call f on it to get some result**
     resultArray.push(processedElement); // push the result to the end of the new array
   }
   return resultArray; // return the new array
@@ -332,7 +334,36 @@ biomes
 // []
 ```
 
-As an exercise, try writing your own implementation of `filter`, as we wrote our own implementation of `map` above.
+As with `map`, we can implement `filter` ourselves:
+
+```javascript
+
+var ourFilter = function(pred, arr){
+  var resultArray = []; // initialize a new array, to be returned at the end of this function
+  for(var i = 0; i < arr.length; i++){ // loop over all elements of arr
+    var arrElement = arr[i]; // get the element at index i of arr
+    if(pred(arrElement)){ // if pred(arrElement) returns true...
+      resultArray.push(arrElement); // push arrElement to the end of the new array
+    }
+  }
+  return resultArray; // return the new array.
+};
+
+
+ourFilter(isOdd, [1, 2, 3, 4]);
+// result:
+// [1, 3]
+
+```
+
+As an exercise, try writing a function 'remove' that is the reverse of `filter`; that is, it _removes_ all the elements `filter` keeps. So:
+
+```javascript
+remove(isOdd, [1, 2, 3, 4]);
+// result:
+// [2, 4]
+
+```
 
 # reduce
 
@@ -344,7 +375,7 @@ var sum = 0;
 for(var i = 0; i < arr.length; i++){
   sum += arr[i];
 }
-console.log(sum);
+// sum is now 36
 ```
 
 In this example, we iterate through `arr`, adding the value of each element to `sum` at each step, then printing out the result.
@@ -361,7 +392,7 @@ for(var i = 0; i < arr.length; i++){
     greatest = arr[i];
   }
 }
-console.log(greatest);
+// greatest is now 16
 ```
 
 Here we start with `greatest` set to a value guaranteed to be less than every other possible value, then move over every element in the array `arr`, setting `greatest` to that element if it is greater than the current value of `greatest`. When we're done looping over every element, `greatest` will be set to the greatest of these values.
@@ -396,16 +427,15 @@ var sum = 0;
 for(var i = 0; i < arr.length; i++){
   sum += arr[i];
 }
-console.log(sum);
+// sum is now 36
 
 // new way, using reduce:
 var arr = [3, 16, 8, 9];
-console.log(
-  arr.reduce(
+arr.reduce(
     function(sum, el){return sum + el;}, // reducing function
     0 // initial value
-  )
 );
+// result: 36
 ```
 
 The result is the same, but we avoid writing a `for` loop. The reducing function in this case takes two arguments, `sum` and `el`. `sum` is roughly the same as `sum` in the first way: a value that we keep adding to as we move over the array. `el` is set to the element of the array at each step. The reducing function returns the value we'll pass in as the value of `sum` on the _next_ step. If we're at the end of the array. The result of the whole `reduce` invocation (or "reduction", as we sometimes say) is just the last return value of the reducing function.
@@ -462,30 +492,34 @@ Another way to look at this is as a series of nested invocations of our reducing
 
 var arr = [3, 16, 8, 9];
 
-((((0 + arr[0]) + arr[1]) + arr[2]) + arr[3])
+((((0 + arr[0]) + arr[1]) + arr[2]) + arr[3]);
 // result: 36
-
+  
 // or, equivalently:
-var f = function(sum, el){
+
+var plus = function(sum, el){
   return sum + el;  
 };
-f(
-  f(
-    f(
-      f(0,
-        arr[0]),
+
+plus(
+  plus(
+    plus(
+      plus(0,
+           arr[0]),
       arr[1]),
     arr[2]),
   arr[3]);
 // result: 36
 
 // or, equivalently:
-arr.reduce(f, 0);
+
+arr.reduce(plus, 0);
+
 // result: 36
 
 ```
 
-Like `map` and `filter`, `reduce` is implemented in Javascript as a method of `Array`s. We can easily implement it ourselves, however. Notice how the implementation below implementation resembles the programs for summing the elements of an array, and finding the greatest element.
+Like `map` and `filter`, `reduce` is implemented in Javascript as a method of `Array`s. We can easily implement it ourselves, however. Notice how the implementation below resembles the programs for summing the elements of an array, and finding the greatest element.
 
 ```javascript
 
@@ -499,7 +533,7 @@ var ourReduce = function(reducingFunction, initialValue, arr){
 };
 ```
 
-With `ourReduce` defined as above, we can now use it to find the sum of elements in an array and the greatest element in an array.
+We can now use `ourReduce` to find the sum of elements in an array, and the greatest element in an array.
 
 Sum:
 
@@ -534,9 +568,10 @@ ourReduce(
   function(greatest, el){return greatest < el ? el : greatest;},
   -Infinity,
   arr);
+// result: 16
 ```
 
-We can even implement `map` and `filter`. Again, pay attention to how the reducing function resembles the body of the loop in `ourMap` and `ourFilter`.
+We can even implement `map` and `filter` using `ourReduce` (or `reduce`). Again, pay attention to how the reducing function resembles the body of the loop in `ourMap` and `ourFilter`.
 
 Map:
 
@@ -577,6 +612,7 @@ Filter:
 
 ```javascript
 
+// we can use ourReduce to get filter-like effects:
 var arr = [3, 16, 8, 9];
 ourReduce(
   function(arr2, el){
