@@ -1,26 +1,21 @@
 <p>The id is: {{id}}</p>
 
-<h3>one way</h3>
-
-{{#happyTone}}
-  {{#students}}
-    {{name}}, who scored {{score}}
-  {{/students}}
-{{/happyTone}}
-
-<h3>another way</h3>
-
 {{#students}}
-	{{#happyTone}}
-		{{name}}, who scored {{score}}
-	{{/happyTone}}
+  <p>{{name}}</p>
 {{/students}}
 
 <h3>partials</h3>
 
+
 <p>We can use partials to pass in named sub-templates.</p>
 {{#students}}
-	{{> foolishPartial}}
+  {{> foolishPartial}}
+{{/students}}
+
+<p>again</p>
+
+{{#students}}
+	<p>this is another 'partial' rendering the current name, which is {{name}}</p>
 {{/students}}
 
 

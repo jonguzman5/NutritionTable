@@ -46,20 +46,39 @@ app.get('/furthermore/:id',function(req,res){
 	     {
 	       id: id,
 	       arr: ['sample1','sample2','sample3'],
-	       // functions work like post-processors.
-	       happyTone: function(){
-		 return(function(text, render){
-		   return "<p>it's just great that " + render(text) + " is a person</p>";
-		 });
-	       },
 	       students: [
-		 {name:'Theobald',score:100},
-		 {name:'Fraznir',score:98},
-		 {name:'Drail',score:89},
-		 {name:'Enzolda',score:72},
-		 {name:'Mary',score:100}
+	     	 {name:'Theobald',score:100},
+	     	 {name:'Fraznir',score:98},
+	     	 {name:'Drail',score:89},
+	     	 {name:'Enzolda',score:72},
+	     	 {name:'Mary',score:100}
 	       ]
-	     }
-	    );
+	     });
 });
+
+app.get('/otherway/:id',function(req,res){
+  var data = 	     {
+    id: req.params.id,
+    arr: ['sample1','sample2','sample3'],
+    students: [
+      {name:'Theobald',score:100},
+      {name:'Fraznir',score:98},
+      {name:'Drail',score:89},
+      {name:'Enzolda',score:72},
+      {name:'Mary',score:100}
+    ]
+  };
+  var id = req.params.id;
+  var page = "";
+  page += "<p>The id is: " + data.id + "</p>";
+  for(var i = 0; i < data.students.length; i++){
+    page+= "<p>" + data.students[i].name + "</p>";
+  }
+  page+= "<h3>one way</h3>";
+  res.render('otherway',
+	     {
+	       page: page
+	     });
+});
+
 
