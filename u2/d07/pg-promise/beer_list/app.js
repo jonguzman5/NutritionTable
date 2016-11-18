@@ -1,4 +1,5 @@
 /* An app will go here */
+$( document ).ready(function() {
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 8080;
@@ -14,8 +15,19 @@ app.get("/", function(req, res) {
 });
 
 // set up an api route for get "/beers'
-
+var beerRoute = function(){
+  return $.ajax({
+    method: "get",
+    url: "/beers",
+  }.promise(function(data){
+    console.log(data)
+  })
+)};
+  beerRoute();
 // set up an api route for get "/beers/:id"
 
+
+
+});
 
 

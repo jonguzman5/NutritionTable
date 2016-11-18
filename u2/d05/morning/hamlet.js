@@ -10,16 +10,36 @@ var hamlets = [
 ];
 
 // Scene I
-
+hamlets.forEach(function(bla){
+  console.log("O! the venerable " +bla.split(', ')[0] +" starred as Hamlet in " + bla.split(', ')[1])
+});
 // Scene II
-
+var hamletsmap = hamlets.map(function(ham) {
+  var newHam = ham.split(', ');
+  var innerArray = [newHam[0], parseInt(newHam[1])]
+  return innerArray;
+})
+console.log(hamletsmap);
 // Scene III
-
+var hamletsobj = hamletsmap.map(function(actor){
+  var obj ={"name": actor[0], "year": actor[1]};
+  return obj;
+});
+console.log(hamletsobj);
 // Scene IV
-
+var swingin_hamlets = hamletsobj.filter(function(actor){
+  var year = actor.year.toString();
+  var decade = year[2];
+  return decade === '6';
+})
+console.log(swingin_hamlets)
 // Scene V
-
-
+var future_hamlets = hamletsobj.filter(function(actor){
+  var year = actor.year.toString();
+  var decade = year[0];
+  return decade === '2';
+})
+console.log(future_hamlets)
 // Act II
 
 var quotesArray = [

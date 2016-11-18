@@ -59,5 +59,38 @@ app.get('/api/npmPackages', function(req, res) {
   res.json(json_data);
 });
 
+// {
+//     title: "languages",
+//     text: "These are programming languages",
+
+//     languages: [
+//       {
+//         name: "javascript",
+//         category: "programming language",
+//         img: "https://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.javascript.png"
+//       },
+//       {
+//         name: "ruby",
+//         category: "programming language",
+//         img: "http://vignette2.wikia.nocookie.net/logopedia/images/c/c9/Ruby-language.png/revision/latest?cb=20130122221837"
+//       },
+//       {
+//         name: "golang",
+//         category: "programming language",
+//         img: "http://www.unixstickers.com/image/cache/data/stickers/golang/golang.sh-600x600.png"
+//       }
+//       {
+//         name: "elm",
+//         category: "programming language",
+//         img: "https://camo.githubusercontent.com/ed415a36e6e7df240aba341de4b384fb796b788d/68747470733a2f2f7062732e7477696d672e636f6d2f70726f66696c655f696d616765732f3434333535313532373330373731383635362f635a486873462d632e706e67"
+//       }
+//       {
+//         name: "elixir",
+//         category: "programming language",
+//         img: "https://avatars2.githubusercontent.com/u/1481354?v=3&s=400"
+//       }
+//     ]
+// }
+
 
 

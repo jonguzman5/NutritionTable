@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 //listen is a function it takes 2 arguments
-//the port number and the callback. for the callback, we can just log that its alive. 
+//the port number and the callback. for the callback, we can just log that its alive.
 app.listen(3000, function(){
   console.log('Sever alive on port 3000!');
 });
@@ -12,10 +12,10 @@ app.get('/',function(req,res){
   res.send("I guess the server is running.");
 });
 
-//mustache 
+//mustache
 var mustache = require('mustache-express');
 
-//configure. 
+//configure.
 app.engine('html',mustache());
 app.set('view engine','html');
 app.set('views',__dirname+'/html');
