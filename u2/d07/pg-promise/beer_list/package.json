@@ -4,7 +4,8 @@
   "description": "![beer](http://i.imgur.com/EDTZyFL.jpg)",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mustache-express": "^1.2.2"
   },
   "devDependencies": {},
   "scripts": {
