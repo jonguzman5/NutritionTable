@@ -87,7 +87,6 @@ Write queries to do the following. Save your answers in the `apartment_queries.s
 - Change all tenants ages to increase by 1
 - Find all tenants who live in an apartment that costs more than $2300
 
-
 ## Part 6 - Express YoSelf
 
 WOW Great Job! Dražen Bryan Mytko, C.E.O. of Mytko Realty, is very happy with the last project you completed for him. He's now able to access his data very easily and needs your services again! He's now ready for a server, built in express, that will use Mustache templates and restful routes to display Bryan Mytko's data in the browser!
