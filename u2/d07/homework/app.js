@@ -43,6 +43,11 @@ app.get("/apartments/:id", function(req, res){
     res.render('apartment', one_apartment_data)
   });
 });
+//SELECT tenants.* , apartments.price
+//FROM tenants, apartments
+//WHERE tenants.apartment_id = apartments.id
+//AND apartments.price>2300;
+
 
 app.get("/tenants", function(req, res){
   db.many("SELECT * FROM tenants").then(function(data){
