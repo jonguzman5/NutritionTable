@@ -1,0 +1,18 @@
+<h1>Here's {{name}}</h1>
+
+Their email is: {{email}}<br>
+
+And their super unsecure password is: {{password}}<br>
+
+<br>
+
+<h1>Edit</h1>
+<form method="POST" action="/users/{{id}}?_method=PUT">
+<input name="name" id="name" value="{{name}}"><br>
+<input name="email" id="email" value="{{email}}"><br>
+<input name="password" id="password" value="{{password}}"><br>
+<button type="submit">Save</button>
+</form>
+
+<script src="/jquery.js"></script>
+<script src="/script.js"></script>
