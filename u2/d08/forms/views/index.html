@@ -1,0 +1,18 @@
+<h1>Here's your users</h1>
+
+{{#users}}
+<div class='user'>
+{{name}}, {{email}} - {{password}} - 
+
+<form method="POST" action="/users/{{id}}?_method=DELETE">
+  <button>DELETE</button>
+</form>
+
+<br><br>
+</div>
+{{/users}}
+
+
+
+<script src="/jquery.js"></script>
+<script src="/script.js"></script>
