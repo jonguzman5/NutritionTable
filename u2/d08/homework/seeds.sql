@@ -1,6 +1,4 @@
 -- remove any records and start the id sequence back to 1
-DROP TABLE IF EXISTS houses CASCADE;
-DROP TABLE IF EXISTS students CASCADE;
 
 -- add create tables here
 

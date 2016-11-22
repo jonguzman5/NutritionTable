@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body>
+{{#Houses}}
+<div class = "house">
+<h2><a href="/houses/{{ id }}">{{ name }}</a></h2>
+<img src={{img_url}}>
+</div>
+{{/Houses}}
+</body>
+</html>
