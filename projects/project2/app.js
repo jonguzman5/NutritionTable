@@ -28,22 +28,25 @@ app.get('/create',function(req,res){
 app.get('/dashboard',function(req,res){
   res.render('dashboard')
 })
-//Complicated Part
-app.get('/:search', function(req,res){
-    var id = req.params.search
-    fetch('https://api.nutritionix.com/v1/search/'+ search + '?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=&appKey=')
+// Complicated Part
+app.post('/search', function(req,res){
+    console.log(req.body)
+    var id = req.body.search
+    console.log(id)
+    fetch('https://api.nutritionix.com/v1/search/'+ id + '?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=&appKey=')
     .then(function(response){
-      return response.json();
+      return response.json(response);
+      console.log(response)
+    }).then(function(json){
+      res.send(json)
     })
-    fetch('https://api.nutritionix.com/v1/item/'+ search +'?appId=&appKey=')
-    .then(function(foo) {
-      console.log('done');
-      res.send(foo)
-    });
-})
-
-
-
+    // fetch('https://api.nutritionix.com/v1/item/'+ id +'?appId=&appKey=')
+    // .then(function(foo) {
+    //   return response.json(foo);
+    //   console.log(response)
+    //   res.send(foo)
+    // })
+});
 
 // app.get('/buildings', function(req, res){
 //   db.many('SELECT * FROM buildings').then(function(data){
