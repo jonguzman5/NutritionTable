@@ -7,6 +7,8 @@ var  db  = pgp('postgres://student_05@localhost:5432/DATABASENAMEGOESHERE');
 var bp = require('body-parser');
 var methodOverride = require('method-override');
 var fetch = require('node-fetch');
+var bcrypt = require('bcrypt');
+var session = require('express-session');
 var port = process.env.PORT || 9002;
 app.listen(port)
 console.log('Server started on ' + port);
@@ -18,6 +20,12 @@ app.set('views', __dirname + '/');
 app.use(methodOverride('_method'))
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
+app.use(session({
+  secret: 'passwordhider',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
 // Manipulation begins
 app.get('/', function(req, res){
   res.render('index');
@@ -28,7 +36,7 @@ app.get('/create',function(req,res){
 app.get('/dashboard',function(req,res){
   res.render('dashboard')
 })
-// Complicated Part
+// Getting data from API
 app.post('/search', function(req,res){
     console.log(req.body)
     var id = req.body.search
@@ -40,13 +48,8 @@ app.post('/search', function(req,res){
     }).then(function(json){
       res.send(json)
     })
-    // fetch('https://api.nutritionix.com/v1/item/'+ id +'?appId=&appKey=')
-    // .then(function(foo) {
-    //   return response.json(foo);
-    //   console.log(response)
-    //   res.send(foo)
-    // })
 });
+
 
 // app.get('/buildings', function(req, res){
 //   db.many('SELECT * FROM buildings').then(function(data){
