@@ -22,18 +22,15 @@ $(document).ready(function() {
   }
   inputFunction();
 
-    var appendNutrition = function(nutrition){
-      var nutrients =  $('#nutritionfacts')
-      console.log(nutrition)
-      nutrients.append('<div>'+nutrition+'</div>');
-    };
+  var appendNutrition = function(nutrition){
+    var nutrients =  $('#nutritionfacts')
+    console.log(nutrition)
+    nutrients.append('<div>'+nutrition+'</div>');
+  };
 
-    var nutritionData = function(data){
-      var productName = data.hits[0].fields.item_name;
-      appendNutrition(productName)
-    };
-
-
-
+  var nutritionData = function(data){
+    var productName = data.hits[0].fields.item_name;
+    appendNutrition(productName)
+  };
 
 }); // jQuery function close
