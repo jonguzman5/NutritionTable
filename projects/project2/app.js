@@ -63,7 +63,7 @@ app.post('/login', function(req, res){
   db.one("SELECT * FROM users WHERE email=$1",[data.email]).catch(function(){
     res.send('The username and password you entered did not match our records. Please try again.')
   }).then(function(user){
-  bcrypt.compare(data.email, user.password, function(err, cmp){
+  bcrypt.compare(data.password, user.password_digest, function(err, cmp){
     if(cmp){
       req.session.user = user;
       res.redirect('/');
@@ -74,12 +74,16 @@ app.post('/login', function(req, res){
   });
 });
 
+app.get('/logout', function(req,res){
+      req.session.user = null;
+      res.redirect('/');
+})
 // Getting data from API
 app.post('/search', function(req,res){
     console.log(req.body)
     var id = req.body.search
     console.log(id)
-    fetch('https://api.nutritionix.com/v1/search/'+ id +'?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId')
+    fetch('https://api.nutritionix.com/v1/search/'+ id +'?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=')
     .then(function(response){
       return response.json(response);
       console.log(response)
