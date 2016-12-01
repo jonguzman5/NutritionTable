@@ -83,14 +83,31 @@ app.post('/search', function(req,res){
     console.log(req.body)
     var id = req.body.search
     console.log(id)
-    fetch('https://api.nutritionix.com/v1/search/'+ id +'?results=0%3A20&cal_min=0&cal_max=50000&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=')
+    fetch('https://api.nutritionix.com/v1_1/search/'+id+'?results=0%3A50&cal_min=0&cal_max=50000&fields=*&')
     .then(function(response){
-      return response.json(response);
+      return response.json(response)
       console.log(response)
     }).then(function(json){
       res.send(json)
     })
-});
+  });
+
+app.post('/save', function(req,res){
+  var id = req.body;
+  console.log(id)
+  console.log("Now Saving...")
+      //Putting it in the database
+      db.none("INSERT INTO saved (itemname, calories) VALUES ($1, $2)", [id.name, id.calories]).then(function(){
+        res.render('/dashboard')
+      })
+})
+
+app.get('/dashboard', function(req, res){
+  db.many(SELECT * FROM users WHERE id = $1)
+  //get the info from the databse with sql
+  //send it to the front end with res.render
+  //use mustache to render
+})
 
 
 

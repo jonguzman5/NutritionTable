@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS saved CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -6,4 +7,11 @@ CREATE TABLE users (
   lastname VARCHAR(100) NOT NULL,
   email VARCHAR(255) UNIQUE,
   password_digest VARCHAR(255)
+);
+
+CREATE TABLE saved (
+  id SERIAL PRIMARY KEY,
+  itemname VARCHAR(100),
+  calories INTEGER,
+  saved_id INTEGER REFERENCES users(id)
 );

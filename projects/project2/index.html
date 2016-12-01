@@ -23,6 +23,13 @@
       <input type="search" id = "indexsearchbar" name="indexsearchbar" placeholder="Search">
     <h3>Everything there is to know about your favorite foods is here</h3>
     <div id="nutritionfacts"></div>
+
+            <form action="/save" name="save" method="post">
+          <div>
+            <button type="submit" id="savebutton">SAVE</button>
+          </div>
+        </form>
+
       {{#logged_in}}
         <div>
           <div>
