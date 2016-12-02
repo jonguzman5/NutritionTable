@@ -125,7 +125,7 @@ app.post('/save', function(req,res){
       //Putting it in the database
   db.none("INSERT INTO saved (itemname,calories) VALUES ($1,$2) ", [id.name, id.calories]).then(function(){
     db.any("SELECT * FROM saved").then(function(data){
-     // var itemData = {data: data}
+     // Putting its into dashboard page
      console.log(data)
       res.render('dashboard', {itemData: data});
     })
