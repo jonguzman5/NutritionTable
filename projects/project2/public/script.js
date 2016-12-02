@@ -26,7 +26,6 @@ $(document).ready(function() {
   var appendNutrition = function(nutrition, nutrition2){
     var nutrients =  $('#nutritionfacts')
     console.log(nutrition)
-    // console.log(nutrition2)
     nutrients.append('<div>'+nutrition+'</div>');
     nutrients.append('<div>'+nutrition2+'</div>');
   };
@@ -41,7 +40,6 @@ $(document).ready(function() {
         name : productName,
         calories : productCalories
       }
-      console.log(saved);
     $.ajax({
       url: "/save",
       method: 'post',
