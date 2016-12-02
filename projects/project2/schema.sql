@@ -12,6 +12,6 @@ CREATE TABLE users (
 CREATE TABLE saved (
   id SERIAL PRIMARY KEY,
   itemname VARCHAR(100),
-  calories INTEGER,
+  calories REAL,
   saved_id INTEGER REFERENCES users(id)
 );

@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://use.fontawesome.com/45e7fb762f.js"></script>
+  <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body>
 <nav>
   <ul>
-    <li><a href="/" title="">Home</a></li>
-    <li><a href="" title=""></a></li>
-    <li><a href="" title=""></a></li>
+    <li><a href="/" title="">Back to Home</a></li>
+    <center><h4>Dashboard</h4></center>
   </ul>
 </nav>
 
-{{#}}
-{{}}
-{{/}}
+<div>
+{{#itemData}}
+<div>{{itemname}}</div>
+<div>{{calories}}</div>
+{{/itemData}}
+</div>
 
 </body>
+<script src="jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="script.js"></script>
 </html>
+

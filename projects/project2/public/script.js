@@ -42,7 +42,6 @@ $(document).ready(function() {
         calories : productCalories
       }
       console.log(saved);
-      event.preventDefault();
     $.ajax({
       url: "/save",
       method: 'post',

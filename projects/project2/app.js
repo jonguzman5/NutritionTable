@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public/'));
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/');
-app.use(methodOverride('_method'))
+app.use(methodOverride('__method'))
 app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 app.use(session({
@@ -50,6 +50,9 @@ app.get('/login',function(req,res){
 app.get('/dashboard',function(req,res){
   res.render('dashboard')
 })
+app.get('/account',function(req,res){
+  res.render('account')
+})
 app.post('/create', function(req, res){
   var data = req.body;
 bcrypt.hash(data.password, 10, function(err, hash){
@@ -74,6 +77,30 @@ app.post('/login', function(req, res){
   });
 });
 
+app.put('/account', function(req, res) {
+  if (req.session.user) {
+    var id = req.session.user.id;
+    var email = req.body.email;
+    db.none('UPDATE users SET (email)=($1) WHERE id=$2', [email, id]).catch(function(err){
+      console.log(err);
+    }).then(function() {
+      res.redirect('login');
+    });
+  }
+})
+
+app.delete('/account', function(req, res) {
+    if (req.session.user) {
+      var user_id = req.session.user.id;
+      db.none('DELETE from users where id=$1', [user_id]).catch(function(err){
+        console.log(err)
+      }).then(function() {
+        req.session.user = null;
+        res.redirect('/')
+      })
+    }
+})
+
 app.get('/logout', function(req,res){
       req.session.user = null;
       res.redirect('/');
@@ -83,7 +110,7 @@ app.post('/search', function(req,res){
     console.log(req.body)
     var id = req.body.search
     console.log(id)
-    fetch('https://api.nutritionix.com/v1_1/search/'+id+'?results=0%3A50&cal_min=0&cal_max=50000&fields=*&')
+    fetch('https://api.nutritionix.com/v1_1/search/'+id+'?results=0%3A50&cal_min=0&cal_max=50000&fields=*&appId=712fb912&appKey=195813b6d067500acc29682de8f73c15')
     .then(function(response){
       return response.json(response)
       console.log(response)
@@ -94,35 +121,13 @@ app.post('/search', function(req,res){
 
 app.post('/save', function(req,res){
   var id = req.body;
-  console.log(id)
-  console.log("Now Saving...")
+  console.log("Now Saving...");
       //Putting it in the database
-      db.none("INSERT INTO saved (itemname, calories) VALUES ($1, $2)", [id.name, id.calories]).then(function(){
-        res.render('/dashboard')
-      })
+  db.none("INSERT INTO saved (itemname,calories) VALUES ($1,$2) ", [id.name, id.calories]).then(function(){
+    db.any("SELECT * FROM saved").then(function(data){
+     // var itemData = {data: data}
+     console.log(data)
+      res.render('dashboard', {itemData: data});
+    })
+  })
 })
-
-app.get('/dashboard', function(req, res){
-  db.many(SELECT * FROM users WHERE id = $1)
-  //get the info from the databse with sql
-  //send it to the front end with res.render
-  //use mustache to render
-})
-
-
-
-// app.get('/buildings', function(req, res){
-//   db.many('SELECT * FROM buildings').then(function(data){
-//     var buildings_data =  {AllBuildingData : data}
-//     console.log(buildings_data);
-//     res.render('buildings', buildings_data)
-//   });
-// });
-
-// app.get('/buildings/:id', function(req, res){
-//   db.one('SELECT * FROM buildings WHERE  id=$1', [req.params.id]).then(function(data){
-//     var one_building_data =  {OneBuildingData : data}
-//     console.log(one_building_data);
-//     res.render('building', one_building_data)
-//   });
-// });

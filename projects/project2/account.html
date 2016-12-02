@@ -7,24 +7,28 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <script src="jquery.js"></script>
-  <script src="script.js"></script>
 </head>
 <body>
-<h1>Sign Up</h1>
-<form method="POST" action="/create">
-First Name:<input name="firstname" id="firstname">
+
+<h1>Settings</h1>
+<form action='/account?__method=PUT' method="post">
+<p>Email</p><input type='text' name='email' value='{{email}}'>
+<br>
+<input type='submit' value='SAVE'>
+</form>
+
 <br><br>
-Last Name:<input name="lastname" id="lastname">
-<br><br>
-Email:<input name="email" id="email">
-<br><br>
-Password:<input name="password" type="password" id="password">
-<br><br>
-<button type="submit">Submit</button>
+
+<form action='/account?__method=DELETE' method="post">
+<input type="submit" value='DELETE ACCOUNT'></button>
+  <input type='hidden' value='{{user}}'>
 </form>
 
 <script src="/jquery.js"></script>
 <script src="/script.js"></script>
+
+<br><br>
+</div>
+
 </body>
 </html>
