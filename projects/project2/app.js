@@ -88,7 +88,7 @@ app.put('/account', function(req, res) {
     });
   }
 })
-
+//Deletes Account
 app.delete('/account', function(req, res) {
     if (req.session.user) {
       var user_id = req.session.user.id;
