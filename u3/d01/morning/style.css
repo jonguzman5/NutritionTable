@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+}
+
+img {
+    max-width: 280px;
+    padding: 10px;
+    margin: 9px;
+}
