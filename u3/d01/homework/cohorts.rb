@@ -155,7 +155,6 @@ students_2.each do |student|
   puts student[:name].upcase
 end
 
-students_2.each do |student|
-  student[:cohort]
-end
+cohort = []
+students_2.each { |student| cohort.push(student[:cohort]) }
 
