@@ -5,6 +5,7 @@ $(document).ready(function(){
       url: "http://www.omdbapi.com/?t=" + movieTitle + "&r=json",
       method: "get"
     }).success(function(movieData){
+        console.log(movieData);
         handleResponse(movieData);
     })
   };

@@ -1,9 +1,35 @@
-require byebug
+# require byebug
 
-class food
+# class food
+#   def editable
+#     response = true
+#     puts "editable? - ${response}"
+#   end
+# end
+
+# class HotFood < Food
+#   def temp
+#     puts "hot"
+#   end
+# end
+
+# class Array
+#   def saythings
+#     self.each |x|
+#       puts x
+#     end
+# end
+
+# Food.editable
+
+# [1,3,4].saythings
+
+require "byebug"
+
+class Food
   def editable
     response = true
-    puts "editable? - ${response}"
+    puts "editable? - #{response}"
   end
 end
 
@@ -15,13 +41,21 @@ end
 
 class Array
   def saythings
-    self.each |x|
+    self.each do |x|
       puts x
     end
+  end
 end
 
-Food.editable
+caserole = Food.new
+caserole.editable
 
 [1,3,4].saythings
+
+
+
+
+
+
 
 

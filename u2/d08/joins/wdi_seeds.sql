@@ -17,10 +17,10 @@ CREATE TABLE students(
 
 COPY monsters
   (name, strength, weakness)
-FROM '/Users/timothygardner/code/wdi-xfiles/WDI-xfiles-instructors/u2/d08/joins/monsters.csv'
+FROM '/Users/student_05/WDI-xfiles-scully/u2/d08/joins/monsters.csv'
     DELIMITER ',' CSV;
 
 COPY students
   (name, familiar)
-FROM '/Users/timothygardner/code/wdi-xfiles/WDI-xfiles-instructors/u2/d08/joins/students.csv'
+FROM '/Users/student_05/WDI-xfiles-scully/u2/d08/joins/students.csv'
     DELIMITER ',' CSV;

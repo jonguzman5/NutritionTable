@@ -1,0 +1,61 @@
+header{
+  background:  url('http://cdn.wallpapersafari.com/90/63/dKP2se.jpg');
+  background-size: 100% 100%;
+}
+body{
+  background-color: black;
+}
+ul{
+  text-decoration: none;
+  list-style-type: none;
+
+}
+li{
+  width: 23%;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+#bottomimage{
+  height: 300px;
+  width: 500px;
+}
+.shakey{
+  position: relative;
+  margin-left:  450px;
+}
+.handshake{
+  position: absolute;
+    top: -3px;
+    left: 100px;
+    height: auto;
+    width: 149px;
+}
+#intro{
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  color: white;
+}
+#cup{
+  height: 100px;
+  width: 80px ;
+  margin-left: 670px;
+}
+#pingpongball{
+  border-radius: 100px;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  margin-left: 685px;
+  margin-bottom: -200px;
+  animation: throw 1s,
+}
+@keyframes throw {
+    from {top:80px;}
+    to {top:0px;}
+}

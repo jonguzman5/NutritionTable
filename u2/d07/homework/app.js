@@ -37,7 +37,7 @@ app.get("/apartments", function(req, res){
 });
 
 app.get("/apartments/:id", function(req, res){
-  db.one("SELECT * FROM apartments WHERE  id=$1", [req.params.id]).then(function(data){
+  db.many("SELECT * FROM apartments WHERE  id=$1", [req.params.id]).then(function(data){
     var one_apartment_data =  {OneApartmentData : data}
     console.log(one_apartment_data);
     res.render('apartment', one_apartment_data)

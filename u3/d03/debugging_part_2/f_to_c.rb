@@ -4,13 +4,13 @@ module Debugging
   # use debugging tools
   # google the error
 
-  require byebug
+  require "byebug"
 
   class TemperatureCalculator
     def get_degrees_c degrees_f
       offset = 32
-      factor = 5/9
-      result = factor * (degrees_f + offest)
+      factor = 5.0/9
+      result = factor * (degrees_f - offset)
       puts result
     end
   end

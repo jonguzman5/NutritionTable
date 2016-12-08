@@ -11,5 +11,5 @@ CREATE TABLE creatures(
 
 COPY creatures
   (species, family, habitat, diet, planet)
-FROM '/Users/timothygardner/code/wdi-xfiles/WDI-xfiles-instructors/u2/d09/api_lab/creatures.csv'
+FROM '/Users/student_05/WDI-xfiles-scully/u2/d09/api_lab/creatures.csv'
     DELIMITER ',' CSV;

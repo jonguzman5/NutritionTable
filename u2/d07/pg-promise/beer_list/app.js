@@ -39,7 +39,7 @@ app.get("/beers", function(req, res) {
 
 // set up an api route for get "/beers'
 app.get("/beers/:id", function(req, res){
-  console.log("hit th beer id route");
+  console.log("hit the beer id route");
   db.one("SELECT * FROM beers WHERE id = $1", [req.params.id])
   .then(function(data){
     console.log(data);

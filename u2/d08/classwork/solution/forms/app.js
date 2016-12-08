@@ -1,4 +1,4 @@
-//require all yo' shit. 
+//require things
 var exp = require ('express'),
     mstE = require('mustache-express'),
     bdPars = require('body-parser'), //body parser
@@ -18,10 +18,10 @@ app.use(bdPars.json()); //body parser
 
 //start the server
 app.listen(3000, function(){
-  console.log('alive on 3k, yo.');
+  console.log('alive on 3k');
 });
 
-//show all users. 
+//show all users.
 app.get('/users', function(req, res){
   db.any('SELECT * FROM users')
   .then(function(data){
@@ -30,7 +30,7 @@ app.get('/users', function(req, res){
   });
 });
 
-//show one user. 
+//show one user.
 app.get('/users/:id',function(req, res){
   db.one('SELECT * FROM users where ID = $1',[req.params.id])
   .then(function(data){
@@ -50,7 +50,7 @@ app.put('/users/:id',function(req, res){
   res.redirect('/users/'+id);
 });
 
-//show the view to make a new user. 
+//show the view to make a new user.
 app.get('/create',function(req,res){
   res.render('create')
 })

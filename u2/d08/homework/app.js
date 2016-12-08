@@ -43,7 +43,7 @@ app.get('/houses', function(req, res){
 });
 app.get("/houses/:id", function(req, res){
   db.one("SELECT * FROM houses WHERE  id=$1", [req.params.id]).then(function(data){
-      db.many("SELECT * FROM students INNER JOIN houses ON (houses.id=students.house_id ) WHERE house_id=$1", [req.params.id]).then(function(data){
+      db.many("SELECT * FROM students INNER JOIN houses ON (houses.id=students.house_id) WHERE house_id=$1", [req.params.id]).then(function(data){
     var symbol = data[0];
     console.log(symbol);
     var house =  {"house" : data, "symbol": symbol}

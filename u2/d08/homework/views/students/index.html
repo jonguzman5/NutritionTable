@@ -11,7 +11,16 @@
 <div class="student">
 <img src="{{image}}">
 <a href="/students/{{ id }}">{{ fname }} {{ lname }}</a>
+<!-- <a href="/students/{{house_id}}">{{ fname }} {{ lname }}</a>
+ -->
+ {{#house}}
+<div class = "student">
+<h2><a href="/students/{{ id }}">{{fname}} {{lname}}</a></h2>
+<img src={{image}}>
 </div>
+{{house_id}}
+{{/house}}
+ </div>
 {{/studentdata}}
 </body>
 </html>

@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE,
-  password_digest VARCHAR(255)
+  name VARCHAR(255),
+  email VARCHAR(255),
+  password VARCHAR(255)
 );
-
