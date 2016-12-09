@@ -1,0 +1,50 @@
+
+<%= render 'header' %>
+<div id='container'>
+	<%= make_full_name(@user['first_name'],@user['last_name']) %> 
+	<br>
+	<img src='<%= image_path("#{@user["first_name"].downcase}.jpg") %>'>
+
+	<br>
+	Age: <%= @user['age'] %>
+	<br>
+	Contact: <%= @user['email'] %>
+	<br>
+	<hr>
+	<h2>Projects:</h2><br>
+
+	<% @user.projects.each do |project| %>
+		<%= project['name'] %> - 
+		<a href='<%= project['url'] %>'><%= project['url'] %></a>
+		<%= link_to 'Remove Project', project, method: :delete %>
+
+		<br>
+		<i>
+			<% project.comments.each do |comment| %>
+				<%= comment['text'] %> - <%= link_to 'Remove Comment', comment, method: :delete %><br>
+			<% end %>
+		</i>
+
+		<br>
+		<form action='/comments' method='POST'>
+			<label>Add a comment for <%= project['name'] %>:</label><br>
+				<input name='text'><br>
+				<input name='project_id' type='hidden' value='<%= project['id'] %>'>
+			<button>Submit</button>
+		</form>
+		<br>
+	<% end %>
+
+
+	<form action='/projects' method='POST'>
+		<h2>Add a project:</h2>
+		<label>Project Name</label><br>
+			<input name='name'><br>
+		<label>Url</label><br>
+			<input name='url'><br>
+			<input name='user_id' type='hidden' value='<%= @user['id'] %>'>
+		<button>Submit</button>
+	</form>
+	
+</div>
+<%= render 'footer' %>
