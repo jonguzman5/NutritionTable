@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212132101) do
+ActiveRecord::Schema.define(version: 20161213134242) do
 
   create_table "cheeses", force: :cascade do |t|
     t.string   "name"
     t.string   "milk_type"
     t.string   "description"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "stank_level"
+    t.integer  "country_id_id"
+    t.index ["country_id_id"], name: "index_cheeses_on_country_id_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

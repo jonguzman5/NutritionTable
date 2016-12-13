@@ -10,3 +10,8 @@ Cheese.create([
   { name: 'Cabrales',                        milk_type: 'sheep', image_url: 'http://en.wikipedia.org/wiki/File:Cabrales.jpg', description: 'Made in the artisan tradition by rural dairy farmers in the north of Spain. This cheese can be made from pure, unpasteurised cow’s milk or blended in the traditional manner with goat and/or sheep milk, which lends the cheese a stronger, more spicy flavor.'},
   { name: 'Bettine Grand Cru',               milk_type: 'goat',  image_url: 'http://www.markys.com/caviar/customer/images/P/120254%20Lg.jpg', description: 'An amazing Dutch gourmet cheese; half-hard old goat’s cheese, minimum 10 months natural aging. This old goat’s cheese has a delicious, piquant flavor and is ideal with a good glass of wine in the evening.'}
 ])
+Cheese.create([
+  {}
+
+
+])
