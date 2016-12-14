@@ -10,7 +10,7 @@ class RocksController < ApplicationController
   end
   def update
     @rock = params['@rock']
-    rockparams = params.require(:rock).permit(:name, :description)
+    rockparams = params.require(:rock).permit(:name, :description, :image)
     Rock.update(params[:id],rockparams)
     redirect_to rocks_path
   end
@@ -22,7 +22,7 @@ class RocksController < ApplicationController
     @rock = Rock.new
   end
   def create
-    rock_params = params.require(:rock).permit(:name, :description)
+    rock_params = params.require(:rock).permit(:name, :description, :image)
     @rock = Rock.new(rock_params)
     @rock.save
     redirect_to rocks_path
