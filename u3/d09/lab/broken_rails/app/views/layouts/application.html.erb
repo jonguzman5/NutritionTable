@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= page_title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="main-content">
+    <div class="heading">
+      <h1><a href="/">A Blog</a></h1>
+      <p>The Subtitle</p>
+    </div>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="/">Words</a></li>
+        <li><a href="/visuals">Visuals</a></li>
+        <li><a href="/about">About</a></li>
+        <%= admin_new_button %>
+      </ul>
+    </nav>
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2016 website.com</p>
+</footer>
+
+<script>
+</body>
+</html>
