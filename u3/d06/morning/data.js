@@ -19,8 +19,7 @@ let scully = [
   "Kristi",
   "Hillary",
   "Connie",
-  "Michael",
-  "Kasaun"
+  "Michael"
 ];
 
 // mulder
