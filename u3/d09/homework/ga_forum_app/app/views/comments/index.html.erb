@@ -1,0 +1,30 @@
+<h1>Comments</h1>
+<%= form_for @comment do |t|%>
+<p>
+<%= t.label :topic_id %>
+<%= t.text_area :topic_id %>
+</p>
+<p>
+<%= t.label :content %>
+<%= t.text_field :content %>
+</p>
+<p>
+<%= t.label :user_id %>
+<%= t.text_area :user_id %>
+</p>
+<p>
+<%= t.label :created_at %>
+<%= t.text_area :created_at %>
+</p>
+<p>
+<%= t.label :updated_at %>
+<%= t.text_area :updated_at %>
+</p>
+<%= t.submit %>
+<% end %>
+
+<% @comments.each do |comment|%>
+<ul>
+<li><%= link_to comment.topic_id, comment%></li>
+</ul>
+<% end %>
