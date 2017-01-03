@@ -18,4 +18,10 @@ describe RubyRobot do
     end
   end
 
+  it "can repeat two phrases" do
+    phrase_one =  "Boop Bloop Blip Beep"
+    phrase_two = "Initiating Rubyness, Beauty, and Hope"
+    expected_response = "BOOP BLOOP BLIP BEEP INITIATING RUBYNESS, BEAUTY, AND HOPE!"
+    expect(RubyRobot.new.say_back(phrase_one, phrase_two)).to eq(expected_response)
+  end
 end

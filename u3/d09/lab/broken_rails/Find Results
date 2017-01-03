@@ -1,0 +1,44 @@
+Searching 149 files for "200"
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/app/assets/stylesheets/home.scss:
+  175    padding: 0;
+  176    list-style-type: none;
+  177:   width: 200px;
+  178  }
+  179
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/log/development.log:
+    <binary>
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/log/test.log:
+    <binary>
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/spec/controllers/home_controller_spec.rb:
+    6      it "has a 201 status code" do
+    7        get :index
+    8:       expect(response.status).to eq(200)
+    9      end
+   10
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/spec/controllers/posts_controller_spec.rb:
+    5      let(:post) { FactoryGirl.create(:post) }
+    6
+    7:     it "has a 200 status code" do
+    8        get :show, id: post.slug
+    9:       expect(response.status).to eq(200)
+   10      end
+   11
+
+77 matches across 5 files
+
+
+Searching 149 files for "to_render"
+
+/Users/student_05/WDI-xfiles-scully/u3/d09/lab/broken_rails/spec/controllers/posts_controller_spec.rb:
+   17      it "renders the :show view" do
+   18        get :show, id: post.slug
+   19:       expect(response).to render_template(:show)
+   20      end
+   21    end
+
+1 match in 1 file

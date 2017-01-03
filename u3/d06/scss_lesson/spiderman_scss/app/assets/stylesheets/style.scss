@@ -1,12 +1,24 @@
 @import "https://fonts.googleapis.com/css?family=Raleway";
-
+@mixin marginpadding{
+  padding: 0;
+  margin: 0;
+}
+@mixin marginpadding2{
+  padding: 20px;
+  margin: 0 auto;
+}
+@mixin marginpadding3{
+  font-family: Raleway;
+  font-size: 17.5px;
+  text-align: centerl
+}
 body {
   background-color: #faebd7;
 }
 
-nav {
-  padding: 0;
-  margin: 0;
+nav,
+#about ul {
+@include marginpadding;
 }
 
 nav ul {
@@ -22,8 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-  margin: 0;
-  padding: 0;
+@include marginpadding;
   font-family: Raleway;
   color: red;
 }
@@ -34,108 +45,54 @@ nav ul li a:hover {
 }
 
 #home h1 {
-  margin: 0 auto;
-  padding: 20px;
+@include marginpadding2;
   font-family: Raleway;
   text-align: center;
   color: blue;
   font-size: 70px;
 }
 
-#home h2 {
-  margin: 0 auto;
-  padding: 20px;
+#home h2,
+#about h2,
+#portfolio h2,
+#contact h2 {
+@include marginpadding2;
   text-align: center;
   color: blue;
   font-family: Raleway;
   font-size: 52.5px;
 }
 
-#main_image {
-  margin: 0;
-  padding: 0;
+#main_image,
+#portfolio,
+#contact{
+@include marginpadding;
   text-align: center;
 }
 
 #main_image img {
-  margin: 0;
-  padding: 0;
+@include marginpadding;
   max-width: 400px;
 }
 
-#about h2 {
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  color: blue;
-  font-family: Raleway;
-  font-size: 52.5px;
-}
-
-#about p {
+#about p,
+#contact p {
   text-align: center;
   color: blue;
   font-size: 17.5px;
   font-family: Raleway;
-  margin: 0;
-  padding: 20px;
-}
-
-#about ul {
-  margin: 0;
-  padding: 0;
+@include marginpadding2;
 }
 
 #about ul li {
-  padding: 20px;
   list-style-type: none;
   color: blue;
-  font-family: Raleway;
-  font-size: 17.5px;
-  text-align: center;
-  margin: 0;
-}
-
-#portfolio {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-#portfolio h2 {
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  color: blue;
-  font-family: Raleway;
-  font-size: 52.5px;
+@include marginpadding3;
+@include marginpadding2;
 }
 
 #portfolio img {
   max-width: 300px;
-  margin: 0;
-  padding: 0;
+@include marginpadding;
 }
 
-#contact {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-#contact h2 {
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  color: blue;
-  font-family: Raleway;
-  font-size: 52.5px;
-}
-
-#contact p {
-  font-family: Raleway;
-  color: blue;
-  font-size: 17.5px;
-  margin: 0;
-  padding: 20px;
-}

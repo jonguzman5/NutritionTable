@@ -5,7 +5,7 @@ RSpec.describe HomeController do
   describe "GET index" do
     it "has a 201 status code" do
       get :index
-      expect(response.status).to eq(201)
+      expect(response.status).to eq(200)
     end
 
     it "renders the :index view" do

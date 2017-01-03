@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # class King
 #       def value_in_blackjack
 #         puts "hi there"
@@ -30,11 +29,11 @@
 #     end
 # end
 # carrie = Dog.new
-=======
+
 # - too specific
 # class King
 #   def value_in_blackjack
-#     10    
+#     10
 #   end
 
 #   def suit
@@ -49,14 +48,12 @@
 
 
 #carrie = Dog.new
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
 # p carrie
 # puts carrie.breed
 # puts carrie.name
 # puts carrie.nickname
 # carrie.bark1
 # carrie.bark2
-<<<<<<< HEAD
 
 # class Dog2
 #   attr_accessor :breed, :name, :nickname, :bark1, :bark2
@@ -67,27 +64,24 @@
 # carrie.nickname = "howler"
 # carrie.bark1 = "hooooooowl"
 # carrie.bark2 = "bork"
-=======
 #carrie.suit = "hearts"
 
 
 # class Dog2
 #   attr_accessor :breed, :name, :nickname, :bark1, :bark2
-  
-# end                                   
+
+# end
 
 # carrie = Dog2.new
 # carrie.breed = "Moose"
 # carrie.name = "mooseDog"
 
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
 # puts carrie.breed
 # puts carrie.name
 # puts carrie.nickname
 # puts carrie.bark1
 # puts carrie.bark2
 
-<<<<<<< HEAD
 # class Dog3
 #   def breed = (value)
 #     @breed = value
@@ -96,11 +90,10 @@
 #     @breed
 #   end
 # end
-=======
 
 # class Dog3
 #   attr_accessor :breed
-  
+
 #   # def breed=(value)
 #   #   @breed = value
 #   # end
@@ -110,12 +103,12 @@
 #   # end
 # end
 
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
+
 # carrie = Dog3.new
 # carrie.breed = "horse"
 # puts carrie.breed
 
-<<<<<<< HEAD
+
 # class Cat
 #   attr_accessor  :name, :color
 # end
@@ -148,12 +141,10 @@
 # class Dog4
     # attr_accessor :name, :nickname, :breed, :bark2
     # attr_reader :bark1
-=======
+
 # class Dog4
 #     attr_accessor :name, :nickname, :breed, :bark2
 #     attr_reader :bark1
-
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
 #     def initialize(name, nickname, breed, bark1)
 #         @name = name
 #         @nickname = nickname
@@ -162,7 +153,7 @@
 #         @bark2 = "whats up"
 #     end
 # end
-<<<<<<< HEAD
+
 # my_dog = Dog4.new("Carrie", "Cuckoo Bear", "Shiba Inu", "Borf")
 # p my_dog
 # p my_dog.name
@@ -173,7 +164,6 @@
 # my_dog.bark2 ="I am a goldfish"
 # p my_dog.bark2
 
-=======
 
 # my_dog = Dog4.new("Carrie", "Cuckoo Bear", "Shiba Inu", "gorp")
 
@@ -190,12 +180,11 @@
 # p my_dog.bark2
 
 
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
 # class Dog5
 #   def initialize()
 #     @hunger = 0
 #   end
-<<<<<<< HEAD
+
 #   def wait()
 #     @hunger = @hunger + 1
 #   end
@@ -207,7 +196,7 @@
 #   end
 # end
 # lassy = Dog5.new
-=======
+
 
 #   def wait
 #     @hunger = @hunger + 1
@@ -225,7 +214,7 @@
 
 # lassy = Dog5.new
 
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
+
 # p lassy.mood
 # lassy.wait
 # p lassy.mood
@@ -234,7 +223,7 @@
 # lassy.feed
 # p lassy.mood
 
-<<<<<<< HEAD
+
 # class Student
 #   attr_accessor :first_name, :last_name, :age, :favorite_food
 #   def initialize(first_name, last_name, age, favorite_food)
@@ -292,60 +281,60 @@
 # puts ogre1
 # player1.attack
 
-# class Card
-#     attr_accessor :value
-#     def initialize(value)
-#         @value = value
-#     end
-# end
-# class FaceCard < Card
-#   def initialize(value)
-#       @value = "10"
-#     end
-# end
-# class AceCard < Card
-#   def initialize(value)
-#       @value = "11"
-#     end
-# end
-# Face = FaceCard.new(@value)
-# puts Face
-# puts Face.value
-# Ace = AceCard.new(@value)
-# puts Ace
-# puts Ace.value
-=======
-class GameEntity
-  attr_accessor :name, :hitpoints, :attack_dmg
-
-  def initialize(name, hitpoints, attack_dmg)
-    @name = name
-    @hitpoints = hitpoints
-    @attack_dmg = attack_dmg
-  end
-
-end
-
-class Player < GameEntity
-    def attack
-        puts "You take #{@attack_dmg} damage!"
+class Card
+    attr_accessor :value
+    def initialize(value)
+        @value = value
     end
 end
-
-class Ogre < GameEntity
-    def initialize(hitpoints, attack_dmg)
-        @name = "Zum"
-        @hitpoints = hitpoints
-        @attack_dmg = attack_dmg
+class FaceCard < Card
+  def initialize(value)
+      @value = "10"
     end
 end
+class AceCard < Card
+  def initialize(value)
+      @value = "11" #|| "1"
+    end
+end
+Face = FaceCard.new(@value)
+puts Face
+puts Face.value
+Ace = AceCard.new(@value)
+puts Ace
+puts Ace.value
 
-player1 = Player.new("Joe", 100, 9999)
-ogre1 = Ogre.new(10, 1)
-puts player1
-puts ogre1
+# class GameEntity
+#   attr_accessor :name, :hitpoints, :attack_dmg
 
-player1.attack
+#   def initialize(name, hitpoints, attack_dmg)
+#     @name = name
+#     @hitpoints = hitpoints
+#     @attack_dmg = attack_dmg
+#   end
 
-puts ogre2
->>>>>>> 5853a3f9a3a9b3ae1294f5892f3b7215cc9cdcb8
+# end
+
+# class Player < GameEntity
+#     def attack
+#         puts "You take #{@attack_dmg} damage!"
+#     end
+# end
+
+# class Ogre < GameEntity
+#     def initialize(hitpoints, attack_dmg)
+#         @name = "Zum"
+#         @hitpoints = hitpoints
+#         @attack_dmg = attack_dmg
+#     end
+# end
+
+# player1 = Player.new("Joe", 100, 9999)
+# ogre1 = Ogre.new(10, 1)
+# puts player1
+# puts ogre1
+
+# player1.attack
+
+# puts ogre2
+
