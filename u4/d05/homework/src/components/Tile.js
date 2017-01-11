@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Component } from 'react';
 
-const Tile = (props) => {
+class Tile extends Component {
+
+Tile = (props) =>{
   const double = props.size === 2 ? '200px' : '';
   return (
     <div
       style={{width: double}}
       className='tile'
+      onClick={() => {props.calcing(props.symbol)}}
     >
       <h5>
         { props.symbol }
@@ -13,5 +16,5 @@ const Tile = (props) => {
     </div>
   );
 }
-
+}
 export default Tile;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Display = () => {
-  // the h3 should show the numbers or symbols in the calculator display
-  // where should this information be coming from?
-  // does this need to be a class component?
+const Display = (props) => {
+  var displaynum = '';
+  displaynum +- props.currInt;
+
   return (
     <div className="display">
       <h5 key="h1" className="display_text">
-        3.14        
+        {displaynum}
       </h5>
     </div>
   );
