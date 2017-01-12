@@ -1,13 +1,10 @@
 import React from 'react';
 
 const Display = (props) => {
-  var displaynum = '';
-  displaynum +- props.currInt;
-
   return (
     <div className="display">
       <h5 key="h1" className="display_text">
-        {displaynum}
+        {props.state.currInt}
       </h5>
     </div>
   );

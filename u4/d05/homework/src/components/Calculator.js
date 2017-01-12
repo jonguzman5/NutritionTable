@@ -22,6 +22,8 @@ constructor(){
 numinput(number){
   var operand = this.state.number;
   operand.push(number);
+console.log(this.state)
+  //operand += number;
   this.setState({
     number: operand,
     currInt: number,
@@ -32,7 +34,7 @@ operator(sym){
     currSym: sym
   })
 }
-calc(operator, num1, num2){
+calc(num1, operator, num2){
   var total = 0;
   if(operator === '+'){
     total = num1 + num2;
@@ -54,8 +56,8 @@ calc(operator, num1, num2){
   render() {
     return (
       <div className="calculator">
-        <Display currInt={this.state.currInt} />
-        <NumberPad numinput={this.numinput} operator={this.operator} calc={this.calc}/>
+        <Display state={this.state} />
+        <NumberPad state={this.state} numinput={this.numinput} operator={this.operator} calc={this.calc}/>
       </div>
     );
   }
