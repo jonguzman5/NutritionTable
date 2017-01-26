@@ -8,7 +8,9 @@ class App extends Component {
     super()
     this.addtask = this.addtask.bind(this);
     this.updateInput = this.updateInput.bind(this);
+    console.log(this.crossout);
     this.crossout = this.crossout.bind(this);
+
       this.state = {
         tasks: [],
         input: '',
