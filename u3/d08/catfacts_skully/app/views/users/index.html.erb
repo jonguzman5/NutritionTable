@@ -1,8 +1,0 @@
-<h1> Welcome to Catfacts</h1>
-<%= form_for :user, method: "post", url: {action: 'create'} do |f| %>
-<%= label(:user, :email) %>
-<%= f.text_field :email %>
-<br>
-<%= f.submit "SEND MAIL" %>
-
-<% end %>

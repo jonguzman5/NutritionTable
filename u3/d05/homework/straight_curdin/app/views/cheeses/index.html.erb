@@ -1,9 +1,0 @@
-<h1>The Great Hall of Cheeses</h1>
-<ul>
-  <% @cheeses.each do |cheese| %>
-    <li><%= link_to cheese.name, cheese %></li>
-    <p><%= link_to "Remove Cheese", cheese, method: :delete%></p>
-
-  <% end %>
-</ul>
-<p><%= link_to "create a new cheese", new_cheese_path%></p><br>
