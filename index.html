@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../nutritionfacts.css">
   <script src="jquery.js"></script>
   <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <title>Nutrition Facts</title>
 </head>
 <body id = "indexbody">
-        <h1>Nutrition Facts</h1>
-        <h4>Everything there is to know about your favorite foods is here</h4>
+        <h1 id="indexh1">Nutrition Facts</h1>
   <nav>
     <ul>
       <li><a href="/create">Sign Up</a></li>
@@ -21,8 +22,8 @@
     </ul>
   </nav>
 
-      <input type="search" id = "indexsearchbar" name="indexsearchbar" placeholder="Search">
-          <div id="nutritionfacts" class = "card z-depth-5 red darken-4"></div>
+      <input type="search" id="indexsearchbar" name="indexsearchbar" placeholder="Search">
+          <div id="nutritionfacts"></div>
                 <form action="/save" name="save" method="post">
           <div>
             <button type="submit" id="savebutton">SAVE</button>
