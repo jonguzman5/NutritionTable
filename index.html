@@ -12,24 +12,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <title>Nutrition Facts</title>
 </head>
-<body id = "indexbody">
-        <h1 id="indexh1">Nutrition Facts</h1>
-  <nav>
+  <body id = "indexbody">
+    <h1 id="indexh1">Nutrition Facts</h1>
+      <input type="search" id="indexsearchbar" name="indexsearchbar" placeholder="Search">
+ <!--   <nav>
     <ul>
       <li><a href="/create">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
       {{#logged_in}}<h4>Welcome {{email}}</h4>{{/logged_in}}
     </ul>
-  </nav>
+  </nav> -->
+        <div id="nutritionfacts"></div>
 
-      <input type="search" id="indexsearchbar" name="indexsearchbar" placeholder="Search">
-          <div id="nutritionfacts"></div>
-                <form action="/save" name="save" method="post">
+        <form action="/save" name="save" method="post">
           <div>
             <button type="submit" id="savebutton">SAVE</button>
           </div>
         </form>
-
       {{#logged_in}}
         <div>
           <a href="/logout">Logout</a>

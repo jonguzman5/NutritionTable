@@ -1,8 +1,10 @@
 #container{
-/*  background: url('./emptytable.jpg') no-repeat;
+  background: url('./emptytable.jpg') no-repeat;
   background-size: 50% 100%;
   background-position: center;
-  height:40em;*/
+  margin: 0 auto;
+  height:40em;
+  width: 60em;
 }
 #smallname{
   font-size: 18pt;
@@ -11,50 +13,50 @@
   font-size: 24pt;
 }
 #servingsize{
-/*  margin: 0 0 -2em -2em;*/
+  margin: 0;
 }
 #calories{
-
+  opacity: 0;
 }
 #caloriesfromfat{
-
+  opacity: 0;
 }
 #totalfat{
-
+  opacity: 0;
 }
 #saturatedfat{
-
+  opacity: 0;
 }
 #transfat{
-
+  opacity: 0;
 }
 #cholesterol{
-
+  opacity: 0;
 }
 #sodium{
-
+  opacity: 0;
 }
 #totalcarbohydrate{
-
+  opacity: 0;
 }
 #dietaryfiber{
-
+  opacity: 0;
 }
 #sugars{
-
+  opacity: 0;
 }
 #protein{
-
+  opacity: 0;
 }
 #vitamina{
-
+  opacity: 0;
 }
 #calcium{
-
+  opacity: 0;
 }
 #vitaminc{
-
+  opacity: 0;
 }
 #iron{
-
+  opacity: 0;
 }

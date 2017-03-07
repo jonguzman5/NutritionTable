@@ -20,6 +20,16 @@ $(document).ready(function() {
   }
   inputFunction();
 
+  var randomColor = function() {
+    var color = '#'+Math.floor(Math.random()*16777216).toString(16);
+    var applyBB = '1px solid' + color;
+    var applyBS = '0 1px 0 0' + color;
+    $("#indexsearchbar").css('color', color)
+    $("#indexsearchbar").css('border-bottom', applyBB)
+    $("#indexsearchbar").css('box-shadow', applyBS)
+  }
+  randomColor();
+
   var appendNutrition = function(name, servingsize, servingsizepercontainer, calories, caloriesfromfat, totalfat, saturatedfat, transfat, cholesterol, sodium, totalcarbohydrate, dietaryfiber, sugars, protein, vitamina, calcium, vitaminc, iron){
     var nutrients =  $('#nutritionfacts')
     var handleHeading = function(){

@@ -1,6 +1,6 @@
 #indexbody {
   text-align: center;
-  background: url('peaches4k.jpg');
+  background: url('https://source.unsplash.com/category/food/1920x1080');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,17 +15,18 @@
 }
 #savebutton{
   border-radius: 100% 100%;
-  background-color: rgb(135,45,50);
+  height: 3.5em;
+  background-color: red;
 }
-nav{
+/*nav{
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
   opacity: 0.6;
   background-color: rgb(135,45,50) !important;
-}
-ul{
+}*/
+/*ul{
   text-decoration: none;
 }
 nav li{
@@ -34,3 +35,4 @@ nav li{
 nav a{
   display: inline-block;
 }
+*/
