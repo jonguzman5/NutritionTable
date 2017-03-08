@@ -1,5 +1,4 @@
 $(document).ready(function() {
-//Queries all related to search
   var searchData = function(nutritionfacts){
     var food = {search:nutritionfacts}
      $.ajax({
@@ -24,9 +23,10 @@ $(document).ready(function() {
     var color = '#'+Math.floor(Math.random()*16777216).toString(16);
     var applyBB = '1px solid' + color;
     var applyBS = '0 1px 0 0' + color;
-    $("#indexsearchbar").css('color', color)
-    $("#indexsearchbar").css('border-bottom', applyBB)
-    $("#indexsearchbar").css('box-shadow', applyBS)
+    $("#indexsearchbar").css('color', color)//searchbar text color
+    $("#indexsearchbar").css('border-bottom', applyBB)//searchbar border
+    $("#indexsearchbar").css('box-shadow', applyBS)//seachbar boxshadow
+    $('nav').css('background-color', color)//navbar color
   }
   randomColor();
 
@@ -39,24 +39,25 @@ $(document).ready(function() {
         nutrients.append('<h4 id="smallname">'+name+'</h4>');
       }
     }
-    nutrients.append('<div id="container">'+ handleHeading() +
-    '<div id="servingsize">'+servingsize+' g'+'</div>'+
-    '<div id="servingsizepercontainer">'+servingsizepercontainer+'</div>'+
-    '<div id="calories">'+calories+'</div>'+
-    '<div id="caloriesfromfat">'+caloriesfromfat+'</div>'+
-    '<div id="totalfat">'+totalfat+' g'+'</div>'+
-    '<div id="saturatedfat">'+saturatedfat+' g'+'</div>'+
-    '<div id="transfat">'+transfat+' g'+'</div>'+
-    '<div id="cholesterol">'+cholesterol+' mg'+'</div>'+
-    '<div id="sodium">'+sodium+' mg'+'</div>'+
-    '<div id="totalcarbohydrate">'+totalcarbohydrate+' g'+'</div>'+
-    '<div id="dietaryfiber">'+dietaryfiber+' g'+'</div>'+
-    '<div id="sugars">'+sugars+' g'+'</div>'+
-    '<div id="protein">'+protein+' g'+'</div>'+
-    '<div id="vitamina">'+vitamina+' %'+'</div>'+
-    '<div id="calcium">'+calcium+' %'+'</div>'+
-    '<div id="vitaminc">'+vitaminc+' %'+'</div>'+
-    '<div id="iron">'+iron+' %'+'</div>'+
+    nutrients.append(handleHeading())
+    nutrients.append('<div id="container">'+
+    '<div id="servingsize">'+'Serving Size '+servingsize+' g'+'</div>'+
+    '<div id="servingsizepercontainer">'+'Servings Per Container '+servingsizepercontainer+'</div>'+
+    '<div id="calories">'+'Calories '+calories+'</div>'+
+    '<div id="caloriesfromfat">'+'Calories from Fat '+caloriesfromfat+'</div>'+
+    '<div id="totalfat">'+'Total Fat '+totalfat+' g'+'</div>'+
+    '<div id="saturatedfat">'+'Saturated Fat '+saturatedfat+' g'+'</div>'+
+    '<div id="transfat">'+'Trans Fat '+transfat+' g'+'</div>'+
+    '<div id="cholesterol">'+'Cholesterol '+cholesterol+' mg'+'</div>'+
+    '<div id="sodium">'+'Sodium '+sodium+' mg'+'</div>'+
+    '<div id="totalcarbohydrate">'+'Total Carbohydrate '+totalcarbohydrate+' g'+'</div>'+
+    '<div id="dietaryfiber">'+'Dietary Fiber '+dietaryfiber+' g'+'</div>'+
+    '<div id="sugars">'+'Sugars '+sugars+' g'+'</div>'+
+    '<div id="protein">'+'Protein '+protein+' g'+'</div>'+
+    '<div id="vitamina">'+'Vitamin A '+vitamina+' %'+'</div>'+
+    '<div id="calcium">'+'Vitamin C '+calcium+' %'+'</div>'+
+    '<div id="vitaminc">'+'Calcium '+vitaminc+' %'+'</div>'+
+    '<div id="iron">'+'Iron '+iron+' %'+'</div>'+
     +'</div>')
   };
 
