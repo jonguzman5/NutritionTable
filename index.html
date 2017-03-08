@@ -24,12 +24,13 @@
       <input type="search" id="indexsearchbar" name="indexsearchbar" placeholder="Search">
         <div id="nutritionfacts"></div>
 
+      {{#logged_in}}
         <form action="/save" name="save" method="post">
+        <!-- move above "#logged_in" if not functional -->
           <div>
             <button type="submit" id="savebutton">SAVE</button>
           </div>
         </form>
-      {{#logged_in}}
         <div>
           <a href="/logout">Logout</a>
           <a href="/account">Account</a>
