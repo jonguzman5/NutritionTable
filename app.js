@@ -41,8 +41,8 @@ app.get('/', function(req, res){
   }
   res.render('index', data);
 });
-app.get('/create',function(req,res){
-  res.render('create')
+app.get('/signup',function(req,res){
+  res.render('signup')
 })
 app.get('/login',function(req,res){
   res.render('login')
@@ -53,7 +53,7 @@ app.get('/dashboard',function(req,res){
 app.get('/account',function(req,res){
   res.render('account')
 })
-app.post('/create', function(req, res){
+app.post('/signup', function(req, res){
   var data = req.body;
 bcrypt.hash(data.password, 10, function(err, hash){
   db.none("INSERT INTO users (firstname, lastname, email, password_digest) VALUES ($1, $2, $3, $4)", [data.firstname, data.lastname, data.email, hash]).then(function(){

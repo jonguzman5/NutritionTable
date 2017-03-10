@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="/stylesheets/signup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
   <script src="jquery.js"></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Sign Up</h1>
-<form method="POST" action="/create">
+<form method="POST" action="/signup">
 First Name:<input name="firstname" id="firstname">
 <br><br>
 Last Name:<input name="lastname" id="lastname">
@@ -21,7 +21,7 @@ Email:<input name="email" id="email">
 <br><br>
 Password:<input name="password" type="password" id="password">
 <br><br>
-<button type="submit">Submit</button>
+<button type="submit" id="signupbutton">Sign Up</button>
 </form>
 
 <script src="/jquery.js"></script>

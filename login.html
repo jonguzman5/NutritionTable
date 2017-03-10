@@ -4,47 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/stylesheets/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="jquery.js"></script>
+  <script src="script.js"></script>
 </head>
-<body>
- <div class="main-container">
-      <div class="border-container">
-        {{#logged_in}}
-        <div>
-          <div>
-            <h4>Welcome {{email}}</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam tellus vitae nulla tristique, quis laoreet nulla fringilla.</p>
-          </div>
-          <a href="/logout">Logout!</a>
-        </div>
-        {{/logged_in}}
-        {{^logged_in}}
-        <div>
-          <div>
-            <form action="/login" method="post">
-                <h2>Login</h2>
-                <div>
-                  <label for="email">Email</label>
-                  <div>
-                    <input name="email" type="text" id="email" placeholder="Email">
-                  </div>
-                </div>
-                <div>
-                  <label for="inputPassword">Password</label>
-                  <div>
-                    <input name="password" type="password" id="password" placeholder="Password">
-                  </div>
-                </div>
-                  <div>
-                    <button type="submit" id="loginButton">Login</button>
-                  </div>
-            </form>
-        {{/logged_in}}
-      </div>
-    </div>
-
-
-</body>
+  <body>
+    <h1>Login</h1>
+    <form method="post" action="/login">
+      Email<input name="email" type="text" placeholder="Please enter email">
+      <br><br>
+      Password<input name="password" type="password" placeholder="Please enter password">
+    <button type="submit" id="loginbutton">Login</button>
+  </body>
 </html>

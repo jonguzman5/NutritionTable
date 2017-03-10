@@ -20,13 +20,16 @@ $(document).ready(function() {
   inputFunction();
 
   var randomColor = function() {
-    var color = '#'+Math.floor(Math.random()*16777216).toString(16);
+    var color = '#'+ Math.floor(Math.random()*16777216).toString(16);
     var applyBB = '1px solid' + color;
     var applyBS = '0 1px 0 0' + color;
-    $("#indexsearchbar").css('color', color)//searchbar text color
-    $("#indexsearchbar").css('border-bottom', applyBB)//searchbar border
-    $("#indexsearchbar").css('box-shadow', applyBS)//seachbar boxshadow
-    $('nav').css('background-color', color)//navbar color
+    $("input").css('color', color)
+    $("input").css('border-bottom', applyBB)
+    $("input").css('box-shadow', applyBS)
+    $('nav').css('background-color', color)//navbar color (text)
+    $('button').css('background-color', color)//signup button color(background)
+    $('h1').css('color', color)//signup h1 color(text)
+    $('form').css('color', color)
   }
   randomColor();
 
