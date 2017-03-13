@@ -20,16 +20,22 @@ $(document).ready(function() {
   inputFunction();
 
   var randomColor = function() {
+    //Hex colors (overall)
     var color = '#'+ Math.floor(Math.random()*16777216).toString(16);
-    var applyBB = '1px solid' + color;
-    var applyBS = '0 1px 0 0' + color;
+    var clear = '#'+ Math.floor(Math.random()*16777216).toString(16) + ' 50%';
+    var applyBB = '1px solid' + color; //border-bottom color [1]
+    var applyBS = '0 1px 0 0' + color; //box-shadow color [1]
+    //RGB colors (for navbar)
+    var R = Math.floor((Math.random()*256));
+    var G = Math.floor((Math.random()*256));
+    var B = Math.floor((Math.random()*256));
     $("input").css('color', color)
-    $("input").css('border-bottom', applyBB)
-    $("input").css('box-shadow', applyBS)
-    $('nav').css('background-color', color)//navbar color (text)
-    $('button').css('background-color', color)//signup button color(background)
-    $('h1').css('color', color)//signup h1 color(text)
-    $('form').css('color', color)
+    $("input").css('border-bottom', applyBB) //border-bottom color [2]
+    $("input").css('box-shadow', applyBS) //box-shadow color [2]
+    $('nav').css('background-color', "rgba(" + R + "," + G + "," + B + "," + 0.5 + ")")
+    $('button').css('background-color', color)//all button colors(background)
+    $('h1').css('color', color)//all h1 colors(text)
+    $('form').css('color', color)//all form colors(text)
   }
   randomColor();
 

@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--   before: ../style.css -->
   <link rel="stylesheet" href="/stylesheets/index.css"/>
-  <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
   <script src="jquery.js"></script>
   <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
@@ -17,8 +16,8 @@
     <h1>Nutrition Facts</h1>
   <nav>
     <ul>
-      <li><a href="/signup">Sign Up</a></li>
-      <li><a href="/login">Log In</a></li>
+      <li><a href="/signup" class="navbutton">Sign Up</a></li>
+      <li><a href="/login" class="navbutton">Log In</a></li>
       {{#logged_in}}<h4>Welcome {{email}}</h4>{{/logged_in}}
     </ul>
   </nav>

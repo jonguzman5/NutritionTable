@@ -5,15 +5,15 @@ body {
   background-position: center;
   background-attachment: fixed;
 }
-h1{
+h1 {
   text-align: center;
 }
-form{
+form {
   height: 30em;
   width: 25em;
   margin: 0 auto;
 }
-#signupbutton{
+#signupbutton {
   color: white;
   border-radius: 25px; /*fix later*/
   border: none;
