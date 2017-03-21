@@ -57,7 +57,7 @@ app.post('/signup', function(req, res){
   var data = req.body;
 bcrypt.hash(data.password, 10, function(err, hash){
   db.none("INSERT INTO users (firstname, lastname, email, password_digest) VALUES ($1, $2, $3, $4)", [data.firstname, data.lastname, data.email, hash]).then(function(){
-    res.send('Thank you for signing up')
+    res.redirect('/login')
     })
   })
 })
@@ -121,12 +121,11 @@ app.post('/search', function(req,res){
 
 app.post('/save', function(req,res){
   var id = req.body;
-  console.log("Now Saving...");
+  console.log("Now Saving...", req.data);
       //Putting it in the database
-  db.none("INSERT INTO saved (itemname,calories) VALUES ($1,$2) ", [id.name, id.calories]).then(function(){
+  db.none("INSERT INTO saved (name, servingsize, servingpercontainer, calories, caloriesfromfat, totalfat, saturatedfat, transfat, cholesterol, sodium, totalcarbohydrate, dietaryfiber, sugars, protein, vitamina, calcium, vitaminc, iron) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18)", [id.name, id.servingsize, id.servingpercontainer, id.calories, id.caloriesfromfat, id.totalfat, id.saturatedfat, id.transfat, id.cholesterol, id.sodium, id.totalcarbohydrate, id.dietaryfiber, id.sugars, id.protein, id.vitamina, id.calcium, id.vitaminc, id.iron]).then(function(){
     db.any("SELECT * FROM saved").then(function(data){
-     // Putting its into dashboard page
-     console.log(data)
+     // Putting it into dashboard page
       res.render('dashboard', {itemData: data});
     })
   })

@@ -3,28 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <title>Dashboard</title>
+  <script src="jquery.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="/stylesheets/dashboard.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </head>
 <body>
-<nav>
-  <ul>
-    <li><a href="/" title="">Back to Home</a></li>
-    <center><h4>Dashboard</h4></center>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="/" title="">Back to Home</a></li>
+      <center><h4>Dashboard</h4></center>
+    </ul>
+  </nav>
 
-<div>
 {{#itemData}}
-<div>{{itemname}}</div>
-<div>{{calories}}</div>
+<center><div>
+  <div>{{name}}</div>
+  <div>Serving Size {{servingsize}} g</div>
+  <div>Servings Per Container {{servingpercontainer}}</div>
+  <div>Calories {{calories}}</div>
+  <div>Calories from Fat {{caloriesfromfat}}</div>
+  <div>Total Fat {{totalfat}} g</div>
+  <div>Saturated Fat {{saturatedfat}} g</div>
+  <div>Trans Fat {{transfat}} g</div>
+  <div>Cholesterol {{cholesterol}} mg</div>
+  <div>Sodium {{sodium}} mg</div>
+  <div>Total Carbohydrate {{totalcarbohydrate}} g</div>
+  <div>Dietary Fiber {{dietaryfiber}} g</div>
+  <div>Sugars {{sugars}} g</div>
+  <div>Protein {{protein}} g</div>
+  <div>Vitamin A {{vitamina}} %</div>
+  <div>Calcium {{calcium}} %</div>
+  <div>Vitamin C {{vitaminc}} %</div>
+  <div>Iron {{iron}} %</div>
+</div></center>
 {{/itemData}}
-</div>
 
 </body>
-<script src="jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <script src="script.js"></script>
 </html>
 

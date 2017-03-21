@@ -23,15 +23,15 @@ $(document).ready(function() {
     //Hex colors (overall)
     var color = '#'+ Math.floor(Math.random()*16777216).toString(16);
     var clear = '#'+ Math.floor(Math.random()*16777216).toString(16) + ' 50%';
-    var applyBB = '1px solid' + color; //border-bottom color [1]
-    var applyBS = '0 1px 0 0' + color; //box-shadow color [1]
+    var applyBB = '1px solid' + color; //border-bottom color [a]
+    var applyBS = '0 1px 0 0' + color; //box-shadow color [a]
     //RGB colors (for navbar)
     var R = Math.floor((Math.random()*256));
     var G = Math.floor((Math.random()*256));
     var B = Math.floor((Math.random()*256));
     $("input").css('color', color)
-    $("input").css('border-bottom', applyBB) //border-bottom color [2]
-    $("input").css('box-shadow', applyBS) //box-shadow color [2]
+    $("input").css('border-bottom', applyBB) //border-bottom color [b]
+    $("input").css('box-shadow', applyBS) //box-shadow color [b]
     $('nav').css('background-color', "rgba(" + R + "," + G + "," + B + "," + 0.5 + ")")
     $('button').css('background-color', color)//all button colors(background)
     $('h1').css('color', color)//all h1 colors(text)
@@ -66,15 +66,15 @@ $(document).ready(function() {
     '<div id="vitamina">'+'Vitamin A '+vitamina+' %'+'</div>'+
     '<div id="calcium">'+'Vitamin C '+calcium+' %'+'</div>'+
     '<div id="vitaminc">'+'Calcium '+vitaminc+' %'+'</div>'+
-    '<div id="iron">'+'Iron '+iron+' %'+'</div>'+
+    '<div id="iron">'+'Iron '+iron+' %'+'</div>'
     +'</div>')
   };
 
   var nutritionData = function(data){
-    var productName = data.hits[0].fields.item_name;
+    var productName = data.hits[0].fields.item_name
     var productServingSize = data.hits[0].fields.nf_serving_weight_grams
     var productServingPerContainer = data.hits[0].fields.nf_servings_per_container
-    var productCalories = data.hits[0].fields.nf_calories;
+    var productCalories = data.hits[0].fields.nf_calories
     var productCaloriesFromFat = data.hits[0].fields.nf_calories_from_fat
     var productTotalFat = data.hits[0].fields.nf_total_fat
       var productSaturatedFat = data.hits[0].fields.nf_saturated_fat
@@ -90,11 +90,12 @@ $(document).ready(function() {
     var productVitaminC = data.hits[0].fields.nf_vitamin_c_dv
     var productIron = data.hits[0].fields.nf_iron_dv
     appendNutrition(productName, productServingSize, productServingPerContainer, productCalories, productCaloriesFromFat, productTotalFat, productSaturatedFat, productTransFat, productCholesterol, productSodium, productTotalCarbohydrate, productDietaryFiber, productSugars, productProtein, productVitaminA, productCalcium, productVitaminC, productIron)
-    $('#savebutton').click(function(event) {
+
+    $('#savebutton').click(function() {
       var saved = {
         name : productName,
         servingsize: productServingSize,
-        servingsizepercontainer: productServingSizePerContainer,
+        servingsizepercontainer: productServingPerContainer,
         calories : productCalories,
         caloriesfromfat: productCaloriesFromFat,
         totalfat: productTotalFat,

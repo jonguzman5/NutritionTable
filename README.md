@@ -36,7 +36,7 @@ eating is now in the palm of your hands.
 * **Node-fetch** To set up routes, thus allowing the user to navigate to other pages throughout the site
 
 
-###Installation Instructions
+### Installation Instructions
 * Installation not required as this website is hosted on Heroku with all the dependencies included.
 
 ### Unsolved Problems
