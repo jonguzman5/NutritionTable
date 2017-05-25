@@ -7,6 +7,8 @@ $(document).ready(function() {
     data: food
     }).done(function(nfacts){
     nutritionData(nfacts)
+    console.log("search result sent")
+    console.log(nfacts)
     })
   };
   var inputFunction = function(){
@@ -112,10 +114,17 @@ $(document).ready(function() {
         vitaminc: productVitaminC,
         iron: productIron,
       }
+      console.log(saved);
+      console.log("search result received?")
     $.ajax({
       url: "/save",
       method: 'post',
-      data: saved
+      datathing: saved,
+      error: function(xhr, status, error) {
+        /* Act on the event */
+        // var err = eval("(" + xhr.responseText + ")");
+        console.log(status);
+      }
       })
     });
   }

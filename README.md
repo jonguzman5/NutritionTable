@@ -1,4 +1,5 @@
-# ![alt-tag](http://i.giphy.com/l44QqQluGMRdAAok8.gif) 
+<!-- # ![alt-tag](http://i.giphy.com/l44QqQluGMRdAAok8.gif) initial release version -->
+# ![alt-tag](./NutritionTable.gif) 
 # Nutrition Table
 
 
